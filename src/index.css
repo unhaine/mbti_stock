@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @config "../tailwind.config.js";
 
+@font-face {
+  font-family: 'NanumSquare';
+  src: url('./utils/fonts/NanumSquareR.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --header-height: 56px;
@@ -27,17 +35,23 @@
   }
 
   /* Scrollbar Customization */
-  .overflow-y-auto::-webkit-scrollbar {
-    width: 4px;
+  /* Scrollbar Customization */
+  .overflow-y-auto::-webkit-scrollbar,
+  .overflow-y-scroll::-webkit-scrollbar {
+    width: 5px;
   }
-  .overflow-y-auto::-webkit-scrollbar-track {
-    background: transparent;
+  .overflow-y-auto::-webkit-scrollbar-track,
+  .overflow-y-scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
   }
-  .overflow-y-auto::-webkit-scrollbar-thumb {
-    @apply bg-dark-300 rounded-[2px];
+  .overflow-y-auto::-webkit-scrollbar-thumb,
+  .overflow-y-scroll::-webkit-scrollbar-thumb {
+    @apply bg-dark-400/30 rounded-full;
   }
-  .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-    @apply bg-dark-400;
+  .overflow-y-auto::-webkit-scrollbar-thumb:hover,
+  .overflow-y-scroll::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500/50;
   }
 }
 

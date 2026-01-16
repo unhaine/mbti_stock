@@ -1,806 +1,3327 @@
 [
   {
-    "ticker": "005930",
+    "ticker": "205038",
     "name": "삼성전자",
     "sector": "반도체",
-    "marketCap": "400조",
-    "price": 72500,
-    "change": 1500,
+    "marketCap": "136조",
+    "price": 675292,
+    "change": 14225,
     "changePercent": 2.11,
-    "volatility": "low",
-    "dividendYield": 2.5,
+    "volatility": "very-high",
+    "dividendYield": 0.5,
     "metaphors": {
-      "INTJ": "기술 제국의 설계자. 치밀한 전략으로 세계를 정복한다.",
-      "INTP": "반도체의 거장. 논리로 만들어낸 완벽한 시스템.",
-      "ENTJ": "글로벌 리더. 1등만이 살아남는 전쟁터의 승자.",
-      "ENTP": "끊임없는 혁신. 항상 새로운 도전을 즐기는 거인.",
-      "default": "대한민국을 대표하는 글로벌 기술 기업"
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["대형주", "우량주", "배당주", "반도체"]
+    "tags": [
+      "우량주",
+      "혁신",
+      "고변동성",
+      "반도체"
+    ]
   },
   {
-    "ticker": "000660",
+    "ticker": "470585",
     "name": "SK하이닉스",
     "sector": "반도체",
-    "marketCap": "100조",
-    "price": 134000,
-    "change": -2000,
-    "changePercent": -1.47,
+    "marketCap": "406조",
+    "price": 90328,
+    "change": -6535,
+    "changePercent": -7.23,
     "volatility": "medium",
-    "dividendYield": 1.2,
+    "dividendYield": 3.6,
     "metaphors": {
-      "INTJ": "메모리의 심장. 데이터 시대의 핵심 인프라.",
-      "ENTJ": "반도체 전쟁의 두 번째 주자. 1등을 노리는 야망.",
-      "default": "글로벌 메모리 반도체 강자"
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["대형주", "성장주", "반도체", "AI"]
+    "tags": [
+      "가치주",
+      "고변동성",
+      "글로벌",
+      "반도체"
+    ]
   },
   {
-    "ticker": "035420",
-    "name": "NAVER",
-    "sector": "인터넷",
-    "marketCap": "50조",
-    "price": 189000,
-    "change": 3500,
-    "changePercent": 1.89,
-    "volatility": "medium",
-    "dividendYield": 0.3,
+    "ticker": "645700",
+    "name": "DB하이텍",
+    "sector": "반도체",
+    "marketCap": "454조",
+    "price": 983386,
+    "change": -70650,
+    "changePercent": -7.18,
+    "volatility": "very-high",
+    "dividendYield": 0.5,
     "metaphors": {
-      "INTJ": "정보의 성. 지식을 체계화하는 디지털 도서관.",
-      "INFJ": "연결의 다리. 사람과 정보를 이어주는 가치.",
-      "ENFP": "무한한 가능성. 새로운 서비스가 샘솟는 플랫폼.",
-      "default": "대한민국 No.1 인터넷 플랫폼"
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["대형주", "플랫폼", "IT", "AI"]
+    "tags": [
+      "배당주",
+      "글로벌",
+      "고변동성",
+      "반도체"
+    ]
   },
   {
-    "ticker": "035720",
-    "name": "카카오",
-    "sector": "인터넷",
-    "marketCap": "20조",
-    "price": 45600,
-    "change": 800,
-    "changePercent": 1.78,
+    "ticker": "434288",
+    "name": "리노공업",
+    "sector": "반도체",
+    "marketCap": "424조",
+    "price": 812626,
+    "change": 65337,
+    "changePercent": 8.04,
     "volatility": "medium",
-    "dividendYield": 0,
+    "dividendYield": 0.1,
     "metaphors": {
-      "ENFP": "일상의 친구. 우리 생활에 스며든 노란 말풍선.",
-      "ESFP": "재미있는 세상. 카톡, 카뱅, 카카오T까지!",
-      "default": "생활 밀착형 플랫폼 기업"
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["대형주", "플랫폼", "IT", "핀테크"]
+    "tags": [
+      "혁신",
+      "성장주",
+      "우량주",
+      "반도체"
+    ]
   },
   {
-    "ticker": "068270",
+    "ticker": "274905",
+    "name": "주성엔지니어링",
+    "sector": "반도체",
+    "marketCap": "274조",
+    "price": 752419,
+    "change": 38295,
+    "changePercent": 5.09,
+    "volatility": "high",
+    "dividendYield": 0.5,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "대형주",
+      "성장주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "139779",
+    "name": "HPSP",
+    "sector": "반도체",
+    "marketCap": "162조",
+    "price": 661113,
+    "change": -24188,
+    "changePercent": -3.66,
+    "volatility": "very-high",
+    "dividendYield": 4.7,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "글로벌",
+      "AI",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "971845",
+    "name": "이오테크닉스",
+    "sector": "반도체",
+    "marketCap": "6조",
+    "price": 558116,
+    "change": 21488,
+    "changePercent": 3.85,
+    "volatility": "low",
+    "dividendYield": 4.0,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "글로벌",
+      "강소기업",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "893229",
+    "name": "원익IPS",
+    "sector": "반도체",
+    "marketCap": "438조",
+    "price": 967369,
+    "change": 47092,
+    "changePercent": 4.87,
+    "volatility": "very-high",
+    "dividendYield": 4.1,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "혁신",
+      "우량주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "295118",
+    "name": "유진테크",
+    "sector": "반도체",
+    "marketCap": "437조",
+    "price": 751993,
+    "change": -48931,
+    "changePercent": -6.51,
+    "volatility": "low",
+    "dividendYield": 2.9,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "대형주",
+      "고변동성",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "312097",
+    "name": "하나마이크론",
+    "sector": "반도체",
+    "marketCap": "355조",
+    "price": 118454,
+    "change": -8336,
+    "changePercent": -7.04,
+    "volatility": "very-high",
+    "dividendYield": 4.3,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "글로벌",
+      "대형주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "355562",
+    "name": "솔브레인",
+    "sector": "반도체",
+    "marketCap": "389조",
+    "price": 615125,
+    "change": -10838,
+    "changePercent": -1.76,
+    "volatility": "medium",
+    "dividendYield": 2.9,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "친환경",
+      "우량주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "251238",
+    "name": "덕산네오룩스",
+    "sector": "반도체",
+    "marketCap": "200조",
+    "price": 947999,
+    "change": -43069,
+    "changePercent": -4.54,
+    "volatility": "low",
+    "dividendYield": 2.1,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "혁신",
+      "대형주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "910605",
+    "name": "SFA반도체",
+    "sector": "반도체",
+    "marketCap": "149조",
+    "price": 672399,
+    "change": 11700,
+    "changePercent": 1.74,
+    "volatility": "medium",
+    "dividendYield": 4.1,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "글로벌",
+      "대형주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "280088",
+    "name": "네패스",
+    "sector": "반도체",
+    "marketCap": "160조",
+    "price": 941879,
+    "change": -88386,
+    "changePercent": -9.38,
+    "volatility": "very-high",
+    "dividendYield": 4.3,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "배당주",
+      "우량주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "647759",
+    "name": "테크윙",
+    "sector": "반도체",
+    "marketCap": "76조",
+    "price": 870282,
+    "change": -59826,
+    "changePercent": -6.87,
+    "volatility": "low",
+    "dividendYield": 5.3,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "AI",
+      "가치주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "058699",
+    "name": "에이디테크놀로지",
+    "sector": "반도체",
+    "marketCap": "429조",
+    "price": 915735,
+    "change": 80049,
+    "changePercent": 8.74,
+    "volatility": "low",
+    "dividendYield": 4.6,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "성장주",
+      "대형주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "971405",
+    "name": "가온칩스",
+    "sector": "반도체",
+    "marketCap": "177조",
+    "price": 172113,
+    "change": 8942,
+    "changePercent": 5.2,
+    "volatility": "low",
+    "dividendYield": 0.9,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "혁신",
+      "대형주",
+      "강소기업",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "884699",
+    "name": "오픈엣지테크놀로지",
+    "sector": "반도체",
+    "marketCap": "358조",
+    "price": 976860,
+    "change": -51838,
+    "changePercent": -5.31,
+    "volatility": "high",
+    "dividendYield": 3.2,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "강소기업",
+      "성장주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "621579",
+    "name": "칩스앤미디어",
+    "sector": "반도체",
+    "marketCap": "470조",
+    "price": 325779,
+    "change": -8515,
+    "changePercent": -2.61,
+    "volatility": "medium",
+    "dividendYield": 0.9,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "강소기업",
+      "친환경",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "550526",
+    "name": "텔레칩스",
+    "sector": "반도체",
+    "marketCap": "1143억",
+    "price": 27098,
+    "change": 2018,
+    "changePercent": 7.45,
+    "volatility": "low",
+    "dividendYield": 4.8,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "친환경",
+      "가치주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "626461",
+    "name": "제우스",
+    "sector": "반도체",
+    "marketCap": "471조",
+    "price": 828288,
+    "change": 28624,
+    "changePercent": 3.46,
+    "volatility": "very-high",
+    "dividendYield": 5.8,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "강소기업",
+      "글로벌",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "021280",
+    "name": "태성",
+    "sector": "반도체",
+    "marketCap": "479조",
+    "price": 859822,
+    "change": 307,
+    "changePercent": 0.04,
+    "volatility": "medium",
+    "dividendYield": 5.8,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "혁신",
+      "가치주",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "503961",
+    "name": "필옵틱스",
+    "sector": "반도체",
+    "marketCap": "462조",
+    "price": 780479,
+    "change": 50926,
+    "changePercent": 6.52,
+    "volatility": "high",
+    "dividendYield": 4.8,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "고변동성",
+      "혁신",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "433676",
+    "name": "아이쓰리시스템",
+    "sector": "반도체",
+    "marketCap": "46조",
+    "price": 831244,
+    "change": 21257,
+    "changePercent": 2.56,
+    "volatility": "medium",
+    "dividendYield": 4.0,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "배당주",
+      "고변동성",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "228273",
+    "name": "미코",
+    "sector": "반도체",
+    "marketCap": "445조",
+    "price": 512974,
+    "change": 38470,
+    "changePercent": 7.5,
+    "volatility": "very-high",
+    "dividendYield": 3.7,
+    "metaphors": {
+      "INTJ": "시스템의 설계자. 초정밀 공정의 마스터.",
+      "ENTJ": "초격차 전략으로 시장을 지배하는 제왕.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "글로벌 공급망의 핵심 기술 파트너",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "글로벌",
+      "혁신",
+      "반도체"
+    ]
+  },
+  {
+    "ticker": "465792",
     "name": "셀트리온",
     "sector": "바이오",
-    "marketCap": "30조",
-    "price": 156000,
-    "change": 2500,
-    "changePercent": 1.63,
-    "volatility": "high",
-    "dividendYield": 0.2,
+    "marketCap": "341조",
+    "price": 143587,
+    "change": 7627,
+    "changePercent": 5.31,
+    "volatility": "medium",
+    "dividendYield": 3.3,
     "metaphors": {
-      "INFJ": "생명을 살리는 기업. 바이오시밀러로 의료 접근성을 높이다.",
-      "INTJ": "과학의 승리. 연구 끝에 피어난 결실.",
-      "default": "글로벌 바이오시밀러 선도 기업"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["바이오", "성장주", "헬스케어"]
+    "tags": [
+      "가치주",
+      "배당주",
+      "우량주",
+      "바이오"
+    ]
   },
   {
-    "ticker": "207940",
+    "ticker": "036849",
     "name": "삼성바이오로직스",
     "sector": "바이오",
-    "marketCap": "70조",
-    "price": 850000,
-    "change": 15000,
-    "changePercent": 1.80,
+    "marketCap": "102조",
+    "price": 637779,
+    "change": 22032,
+    "changePercent": 3.45,
     "volatility": "medium",
-    "dividendYield": 0,
+    "dividendYield": 1.0,
     "metaphors": {
-      "ISTJ": "안정적인 성장. 검증된 CMO 사업 모델.",
-      "INTJ": "바이오 인프라의 거인. 세계 1위를 향한 여정.",
-      "default": "글로벌 바이오의약품 위탁생산(CMO) 1위"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["바이오", "대형주", "헬스케어", "성장주"]
+    "tags": [
+      "배당주",
+      "강소기업",
+      "혁신",
+      "바이오"
+    ]
   },
   {
-    "ticker": "005490",
-    "name": "POSCO홀딩스",
-    "sector": "철강",
-    "marketCap": "25조",
-    "price": 320000,
-    "change": -5000,
-    "changePercent": -1.54,
+    "ticker": "266580",
+    "name": "HLB",
+    "sector": "바이오",
+    "marketCap": "348조",
+    "price": 547507,
+    "change": 24605,
+    "changePercent": 4.49,
     "volatility": "medium",
-    "dividendYield": 3.5,
+    "dividendYield": 4.8,
     "metaphors": {
-      "ISTJ": "철의 기둥. 대한민국 산업화의 상징.",
-      "ESTJ": "효율의 대명사. 철강에서 2차전지까지.",
-      "default": "철강에서 친환경 소재까지"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["대형주", "배당주", "철강", "2차전지"]
+    "tags": [
+      "대형주",
+      "AI",
+      "친환경",
+      "바이오"
+    ]
   },
   {
-    "ticker": "051910",
-    "name": "LG화학",
-    "sector": "화학",
-    "marketCap": "35조",
-    "price": 450000,
-    "change": 8000,
-    "changePercent": 1.81,
-    "volatility": "medium",
-    "dividendYield": 1.8,
-    "metaphors": {
-      "INTJ": "화학의 미래를 그리다. 2차전지 핵심 소재.",
-      "ENTJ": "배터리 전쟁의 핵심 플레이어.",
-      "default": "화학에서 배터리까지, 다각화된 거인"
-    },
-    "tags": ["대형주", "2차전지", "화학", "성장주"]
-  },
-  {
-    "ticker": "006400",
-    "name": "삼성SDI",
-    "sector": "2차전지",
-    "marketCap": "30조",
-    "price": 420000,
-    "change": 5000,
-    "changePercent": 1.20,
-    "volatility": "high",
-    "dividendYield": 0.5,
-    "metaphors": {
-      "ENTJ": "에너지 저장의 리더. 전기차 시대의 핵심.",
-      "INTJ": "기술로 미래를 준비하다.",
-      "default": "글로벌 2차전지 및 전자재료 기업"
-    },
-    "tags": ["대형주", "2차전지", "성장주", "전기차"]
-  },
-  {
-    "ticker": "000270",
-    "name": "기아",
-    "sector": "자동차",
-    "marketCap": "35조",
-    "price": 85000,
-    "change": 1200,
-    "changePercent": 1.43,
-    "volatility": "medium",
-    "dividendYield": 4.0,
-    "metaphors": {
-      "ESTJ": "효율의 아이콘. 디자인과 성능의 균형.",
-      "ISFJ": "안전한 이동. 가족을 위한 차.",
-      "default": "글로벌 자동차 브랜드"
-    },
-    "tags": ["대형주", "배당주", "자동차", "전기차"]
-  },
-  {
-    "ticker": "247540",
-    "name": "에코프로비엠",
-    "sector": "2차전지",
-    "marketCap": "15조",
-    "price": 180000,
-    "change": 12000,
-    "changePercent": 7.14,
-    "volatility": "very-high",
-    "dividendYield": 0,
-    "metaphors": {
-      "ENTP": "폭발적 성장! 2차전지 소재의 슈퍼스타.",
-      "ESTP": "가즈아~! 급등의 아이콘.",
-      "ENFP": "꿈을 현실로! 친환경 미래의 주역.",
-      "default": "2차전지 양극재 선도 기업"
-    },
-    "tags": ["2차전지", "성장주", "고변동성", "친환경"]
-  },
-  {
-    "ticker": "086520",
-    "name": "에코프로",
-    "sector": "2차전지",
-    "marketCap": "10조",
-    "price": 95000,
-    "change": 5500,
-    "changePercent": 6.15,
-    "volatility": "very-high",
-    "dividendYield": 0,
-    "metaphors": {
-      "ESTP": "롤러코스터! 스릴을 즐기는 투자자를 위한.",
-      "ENTP": "변동성이 곧 기회! 과감한 베팅.",
-      "default": "2차전지 소재 지주회사"
-    },
-    "tags": ["2차전지", "성장주", "고변동성", "지주회사"]
-  },
-  {
-    "ticker": "326030",
-    "name": "SK바이오팜",
-    "sector": "제약",
-    "marketCap": "5조",
-    "price": 85000,
-    "change": 1800,
-    "changePercent": 2.16,
-    "volatility": "high",
-    "dividendYield": 0,
-    "metaphors": {
-      "INFJ": "생명을 위한 연구. 신약 개발의 희망.",
-      "INTP": "과학적 도전. 수년간의 연구 끝에 빛나는 결실.",
-      "default": "신약 개발 전문 제약사"
-    },
-    "tags": ["바이오", "성장주", "신약", "헬스케어"]
-  },
-  {
-    "ticker": "352820",
-    "name": "하이브",
-    "sector": "엔터",
-    "marketCap": "10조",
-    "price": 200000,
-    "change": 4500,
-    "changePercent": 2.30,
-    "volatility": "high",
-    "dividendYield": 0,
-    "metaphors": {
-      "ENFP": "꿈의 무대! K-POP의 글로벌 제국.",
-      "ESFP": "반짝반짝! 스타를 만드는 공장.",
-      "ISFP": "감성과 예술. 음악으로 세상을 감동시키다.",
-      "default": "BTS 소속사, 글로벌 K-POP 리더"
-    },
-    "tags": ["엔터", "성장주", "K-POP", "콘텐츠"]
-  },
-  {
-    "ticker": "041510",
-    "name": "에스엠",
-    "sector": "엔터",
-    "marketCap": "1조",
-    "price": 82000,
-    "change": 1500,
-    "changePercent": 1.86,
-    "volatility": "high",
-    "dividendYield": 0.5,
-    "metaphors": {
-      "ISFP": "K-POP의 산실. 아이돌 시스템의 창시자.",
-      "ESFP": "끝없는 히트곡! 엔터의 클래식.",
-      "default": "K-POP 1세대 엔터테인먼트"
-    },
-    "tags": ["엔터", "K-POP", "콘텐츠"]
-  },
-  {
-    "ticker": "122870",
-    "name": "YG엔터테인먼트",
-    "sector": "엔터",
-    "marketCap": "8000억",
-    "price": 52000,
-    "change": 800,
-    "changePercent": 1.56,
-    "volatility": "high",
-    "dividendYield": 0,
-    "metaphors": {
-      "ISFP": "힙합 DNA. 음악으로 개성을 표현하다.",
-      "ESFP": "스타일리시! 독보적인 아티스트 라인업.",
-      "default": "블랙핑크 소속사"
-    },
-    "tags": ["엔터", "K-POP", "콘텐츠"]
-  },
-  {
-    "ticker": "035900",
-    "name": "JYP엔터테인먼트",
-    "sector": "엔터",
-    "marketCap": "1.2조",
-    "price": 68000,
-    "change": 1200,
-    "changePercent": 1.80,
-    "volatility": "high",
-    "dividendYield": 0.8,
-    "metaphors": {
-      "ENFJ": "함께 성장하는 아티스트. 팀워크의 힘.",
-      "ESFP": "트와이스의 기적! 글로벌 팬덤.",
-      "default": "트와이스, 스트레이키즈 소속사"
-    },
-    "tags": ["엔터", "K-POP", "콘텐츠", "성장주"]
-  },
-  {
-    "ticker": "036570",
-    "name": "엔씨소프트",
-    "sector": "게임",
-    "marketCap": "10조",
-    "price": 185000,
-    "change": -3500,
-    "changePercent": -1.86,
-    "volatility": "high",
+    "ticker": "464751",
+    "name": "알테오젠",
+    "sector": "바이오",
+    "marketCap": "115조",
+    "price": 533469,
+    "change": -30975,
+    "changePercent": -5.81,
+    "volatility": "low",
     "dividendYield": 1.2,
     "metaphors": {
-      "INTP": "게임 설계의 장인. 리니지 신화의 창조자.",
-      "INTJ": "IP의 힘. 오랜 시간 쌓아온 브랜드 가치.",
-      "default": "리니지 시리즈 개발사"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["게임", "IT", "콘텐츠", "배당주"]
+    "tags": [
+      "고변동성",
+      "배당주",
+      "친환경",
+      "바이오"
+    ]
   },
   {
-    "ticker": "251270",
-    "name": "넷마블",
-    "sector": "게임",
-    "marketCap": "5조",
-    "price": 48000,
-    "change": 950,
-    "changePercent": 2.02,
+    "ticker": "894905",
+    "name": "셀트리온제약",
+    "sector": "바이오",
+    "marketCap": "35조",
+    "price": 413947,
+    "change": -26739,
+    "changePercent": -6.46,
     "volatility": "high",
-    "dividendYield": 0,
+    "dividendYield": 2.8,
     "metaphors": {
-      "ENFP": "다양한 게임! 끊임없는 신작 출시.",
-      "ENTP": "글로벌 도전! 해외 시장 개척.",
-      "default": "모바일 게임 강자"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["게임", "IT", "콘텐츠", "성장주"]
+    "tags": [
+      "고변동성",
+      "우량주",
+      "배당주",
+      "바이오"
+    ]
   },
   {
-    "ticker": "263750",
-    "name": "펄어비스",
-    "sector": "게임",
-    "marketCap": "1.5조",
-    "price": 42000,
-    "change": 1800,
-    "changePercent": 4.48,
+    "ticker": "417659",
+    "name": "메디톡스",
+    "sector": "바이오",
+    "marketCap": "139조",
+    "price": 474276,
+    "change": 27450,
+    "changePercent": 5.79,
     "volatility": "very-high",
-    "dividendYield": 0,
+    "dividendYield": 4.8,
     "metaphors": {
-      "ISTP": "기술력의 결정체. 검은사막의 그래픽.",
-      "ESTP": "빠른 액션! 박진감 넘치는 게임.",
-      "default": "검은사막 개발사"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["게임", "IT", "콘텐츠", "고변동성"]
+    "tags": [
+      "성장주",
+      "혁신",
+      "AI",
+      "바이오"
+    ]
   },
   {
-    "ticker": "112040",
-    "name": "위메이드",
-    "sector": "게임",
-    "marketCap": "2조",
-    "price": 38000,
-    "change": 2500,
-    "changePercent": 7.04,
-    "volatility": "very-high",
-    "dividendYield": 0,
+    "ticker": "699742",
+    "name": "휴젤",
+    "sector": "바이오",
+    "marketCap": "116조",
+    "price": 160790,
+    "change": -11380,
+    "changePercent": -7.08,
+    "volatility": "low",
+    "dividendYield": 1.0,
     "metaphors": {
-      "ENTP": "블록체인 게임의 선구자! P2E의 미래.",
-      "ESTP": "고위험 고수익! 급등락의 롤러코스터.",
-      "default": "미르4, 위믹스 플랫폼"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["게임", "블록체인", "고변동성", "신산업"]
+    "tags": [
+      "글로벌",
+      "고변동성",
+      "혁신",
+      "바이오"
+    ]
   },
   {
-    "ticker": "293490",
-    "name": "카카오게임즈",
-    "sector": "게임",
-    "marketCap": "3조",
-    "price": 25000,
-    "change": 450,
-    "changePercent": 1.83,
+    "ticker": "150897",
+    "name": "클래시스",
+    "sector": "바이오",
+    "marketCap": "137조",
+    "price": 179348,
+    "change": -4798,
+    "changePercent": -2.68,
     "volatility": "high",
-    "dividendYield": 0,
+    "dividendYield": 0.7,
     "metaphors": {
-      "ENFP": "카카오의 게임 플랫폼! 다양한 IP.",
-      "ESFP": "재미있는 게임들! 가볍게 즐기는.",
-      "default": "게임 퍼블리싱 및 개발"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["게임", "IT", "플랫폼", "성장주"]
+    "tags": [
+      "AI",
+      "글로벌",
+      "혁신",
+      "바이오"
+    ]
   },
   {
-    "ticker": "377300",
-    "name": "카카오페이",
-    "sector": "핀테크",
-    "marketCap": "5조",
-    "price": 32000,
-    "change": 850,
-    "changePercent": 2.73,
+    "ticker": "685579",
+    "name": "파마리서치",
+    "sector": "바이오",
+    "marketCap": "300조",
+    "price": 322264,
+    "change": -13276,
+    "changePercent": -4.12,
     "volatility": "high",
-    "dividendYield": 0,
+    "dividendYield": 3.7,
     "metaphors": {
-      "ENTP": "결제의 혁신! 간편함의 끝.",
-      "ENFP": "일상의 편리함! 터치 한 번으로.",
-      "default": "간편결제 플랫폼"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["핀테크", "IT", "플랫폼", "성장주"]
+    "tags": [
+      "글로벌",
+      "강소기업",
+      "성장주",
+      "바이오"
+    ]
   },
   {
-    "ticker": "402340",
-    "name": "SK스퀘어",
-    "sector": "지주회사",
-    "marketCap": "8조",
-    "price": 52000,
-    "change": 1200,
-    "changePercent": 2.36,
-    "volatility": "medium",
-    "dividendYield": 0.8,
-    "metaphors": {
-      "INTJ": "미래 투자의 포트폴리오. ICT 지주회사.",
-      "ENTJ": "전략적 투자! 성장 산업에 집중.",
-      "default": "SK하이닉스 지분 보유 지주회사"
-    },
-    "tags": ["지주회사", "IT", "반도체", "성장주"]
-  },
-  {
-    "ticker": "055550",
-    "name": "신한지주",
-    "sector": "금융",
-    "marketCap": "20조",
-    "price": 42000,
-    "change": 500,
-    "changePercent": 1.20,
-    "volatility": "low",
-    "dividendYield": 5.5,
-    "metaphors": {
-      "ISTJ": "안정의 상징. 검증된 금융 그룹.",
-      "ISFJ": "안심할 수 있는 배당. 든든한 수익.",
-      "default": "대한민국 대표 금융지주"
-    },
-    "tags": ["금융", "배당주", "대형주", "안정주"]
-  },
-  {
-    "ticker": "034730",
-    "name": "SK",
-    "sector": "지주회사",
-    "marketCap": "15조",
-    "price": 175000,
-    "change": 2500,
-    "changePercent": 1.45,
-    "volatility": "low",
-    "dividendYield": 4.0,
-    "metaphors": {
-      "ISTJ": "다각화된 거인. 에너지에서 반도체까지.",
-      "ESTJ": "체계적인 그룹 경영. 안정적 성장.",
-      "default": "SK그룹 지주회사"
-    },
-    "tags": ["지주회사", "배당주", "대형주", "안정주"]
-  },
-  {
-    "ticker": "018260",
-    "name": "삼성에스디에스",
-    "sector": "IT서비스",
-    "marketCap": "10조",
-    "price": 145000,
-    "change": 1500,
-    "changePercent": 1.05,
-    "volatility": "low",
-    "dividendYield": 2.0,
-    "metaphors": {
-      "ISTJ": "시스템의 안정. IT 인프라의 핵심.",
-      "INTJ": "디지털 전환의 파트너. 기업 IT의 핵심.",
-      "default": "삼성그룹 IT서비스 기업"
-    },
-    "tags": ["IT", "대형주", "안정주", "배당주"]
-  },
-  {
-    "ticker": "032640",
-    "name": "LG유플러스",
-    "sector": "통신",
-    "marketCap": "5조",
-    "price": 11500,
-    "change": 150,
-    "changePercent": 1.32,
-    "volatility": "low",
-    "dividendYield": 5.0,
-    "metaphors": {
-      "ISFJ": "안정적인 배당. 통신의 든든함.",
-      "ISTJ": "필수 인프라. 꾸준한 현금흐름.",
-      "default": "통신 및 미디어 서비스"
-    },
-    "tags": ["통신", "배당주", "안정주", "5G"]
-  },
-  {
-    "ticker": "096770",
-    "name": "SK이노베이션",
-    "sector": "에너지",
-    "marketCap": "8조",
-    "price": 95000,
-    "change": 2000,
-    "changePercent": 2.15,
-    "volatility": "medium",
-    "dividendYield": 2.5,
-    "metaphors": {
-      "ENFJ": "친환경 전환의 선두. 그린 에너지로.",
-      "INTJ": "에너지 패러다임의 변화를 준비하다.",
-      "default": "정유에서 배터리까지"
-    },
-    "tags": ["에너지", "2차전지", "성장주", "친환경"]
-  },
-  {
-    "ticker": "003670",
-    "name": "포스코퓨처엠",
-    "sector": "2차전지",
-    "marketCap": "12조",
-    "price": 280000,
-    "change": 8000,
-    "changePercent": 2.94,
+    "ticker": "576979",
+    "name": "에스티팜",
+    "sector": "바이오",
+    "marketCap": "303조",
+    "price": 672981,
+    "change": -54858,
+    "changePercent": -8.15,
     "volatility": "high",
-    "dividendYield": 0.3,
+    "dividendYield": 3.5,
     "metaphors": {
-      "ENTJ": "2차전지 소재의 핵심. 미래를 준비하다.",
-      "INTJ": "철강에서 배터리로. 변신의 성공.",
-      "default": "2차전지 양극재 및 음극재"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["2차전지", "성장주", "친환경", "소재"]
+    "tags": [
+      "대형주",
+      "AI",
+      "혁신",
+      "바이오"
+    ]
   },
   {
-    "ticker": "012330",
-    "name": "현대모비스",
-    "sector": "자동차부품",
-    "marketCap": "20조",
-    "price": 230000,
-    "change": 3500,
-    "changePercent": 1.55,
-    "volatility": "medium",
-    "dividendYield": 2.0,
+    "ticker": "487023",
+    "name": "삼천당제약",
+    "sector": "바이오",
+    "marketCap": "232조",
+    "price": 775883,
+    "change": -30677,
+    "changePercent": -3.95,
+    "volatility": "high",
+    "dividendYield": 0.1,
     "metaphors": {
-      "ISTJ": "자동차의 심장. 안정적인 부품 공급.",
-      "ESTJ": "효율적인 모듈화. 체계적인 성장.",
-      "default": "현대차그룹 핵심 부품사"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["자동차", "부품", "대형주", "배당주"]
+    "tags": [
+      "글로벌",
+      "고변동성",
+      "성장주",
+      "바이오"
+    ]
   },
   {
-    "ticker": "028260",
-    "name": "삼성물산",
-    "sector": "건설/상사",
-    "marketCap": "18조",
-    "price": 135000,
-    "change": 2000,
-    "changePercent": 1.50,
-    "volatility": "low",
-    "dividendYield": 1.5,
-    "metaphors": {
-      "ISTJ": "삼성 그룹의 뿌리. 안정적인 지주 역할.",
-      "ESTJ": "건설에서 패션까지. 다각화된 사업.",
-      "default": "삼성그룹 지주회사 역할"
-    },
-    "tags": ["건설", "대형주", "안정주", "지주회사"]
-  },
-  {
-    "ticker": "105560",
-    "name": "KB금융",
-    "sector": "금융",
-    "marketCap": "25조",
-    "price": 58000,
-    "change": 800,
-    "changePercent": 1.40,
+    "ticker": "928020",
+    "name": "오스코텍",
+    "sector": "바이오",
+    "marketCap": "378조",
+    "price": 746710,
+    "change": 18808,
+    "changePercent": 2.52,
     "volatility": "low",
     "dividendYield": 4.5,
     "metaphors": {
-      "ISTJ": "금융의 안정. 검증된 리더십.",
-      "ISFJ": "안심 배당. 가족의 미래를 위한.",
-      "default": "국민은행 지주회사"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["금융", "배당주", "대형주", "안정주"]
+    "tags": [
+      "글로벌",
+      "대형주",
+      "우량주",
+      "바이오"
+    ]
   },
   {
-    "ticker": "010140",
-    "name": "삼성중공업",
-    "sector": "조선",
-    "marketCap": "8조",
-    "price": 12000,
-    "change": 350,
-    "changePercent": 3.01,
+    "ticker": "225215",
+    "name": "보로노이",
+    "sector": "바이오",
+    "marketCap": "441조",
+    "price": 619672,
+    "change": 1657,
+    "changePercent": 0.27,
+    "volatility": "medium",
+    "dividendYield": 1.9,
+    "metaphors": {
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "성장주",
+      "가치주",
+      "바이오"
+    ]
+  },
+  {
+    "ticker": "951428",
+    "name": "큐리옥스바이오시스템즈",
+    "sector": "바이오",
+    "marketCap": "136조",
+    "price": 524545,
+    "change": -4235,
+    "changePercent": -0.81,
+    "volatility": "medium",
+    "dividendYield": 4.4,
+    "metaphors": {
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "고변동성",
+      "대형주",
+      "바이오"
+    ]
+  },
+  {
+    "ticker": "350639",
+    "name": "지아이이노베이션",
+    "sector": "바이오",
+    "marketCap": "90조",
+    "price": 838329,
+    "change": -68254,
+    "changePercent": -8.14,
+    "volatility": "medium",
+    "dividendYield": 3.8,
+    "metaphors": {
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "혁신",
+      "우량주",
+      "대형주",
+      "바이오"
+    ]
+  },
+  {
+    "ticker": "468253",
+    "name": "올릭스",
+    "sector": "바이오",
+    "marketCap": "116조",
+    "price": 728704,
+    "change": -19308,
+    "changePercent": -2.65,
     "volatility": "high",
-    "dividendYield": 0,
+    "dividendYield": 5.7,
     "metaphors": {
-      "INTP": "저평가된 숨은 보석. 조선 사이클 회복.",
-      "ISTP": "실전 기술력. 대형 선박의 장인.",
-      "default": "LNG선 건조 세계 1위"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["조선", "가치주", "턴어라운드", "수출"]
+    "tags": [
+      "고변동성",
+      "친환경",
+      "우량주",
+      "바이오"
+    ]
   },
   {
-    "ticker": "097950",
-    "name": "CJ제일제당",
-    "sector": "식품",
-    "marketCap": "5조",
-    "price": 285000,
-    "change": 4500,
-    "changePercent": 1.60,
-    "volatility": "low",
-    "dividendYield": 1.8,
-    "metaphors": {
-      "ISFJ": "밥상의 안정. 식품의 든든한 선택.",
-      "ISTJ": "필수소비재. 경기와 무관한 안정성.",
-      "default": "식품 및 바이오 기업"
-    },
-    "tags": ["식품", "필수소비재", "안정주", "배당주"]
-  },
-  {
-    "ticker": "028050",
-    "name": "삼성엔지니어링",
-    "sector": "건설",
-    "marketCap": "5조",
-    "price": 28000,
-    "change": 650,
-    "changePercent": 2.38,
+    "ticker": "165467",
+    "name": "디앤디파마텍",
+    "sector": "바이오",
+    "marketCap": "111조",
+    "price": 387184,
+    "change": -11192,
+    "changePercent": -2.89,
     "volatility": "medium",
-    "dividendYield": 1.5,
+    "dividendYield": 4.4,
     "metaphors": {
-      "INTP": "저평가 가치주. 수주 회복의 기대.",
-      "ESTJ": "플랜트 건설의 강자. 해외 프로젝트.",
-      "default": "플랜트 건설 전문"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["건설", "가치주", "수출", "플랜트"]
+    "tags": [
+      "AI",
+      "친환경",
+      "혁신",
+      "바이오"
+    ]
   },
   {
-    "ticker": "011170",
-    "name": "롯데케미칼",
-    "sector": "화학",
-    "marketCap": "4조",
-    "price": 95000,
-    "change": -1500,
-    "changePercent": -1.55,
-    "volatility": "medium",
-    "dividendYield": 2.0,
+    "ticker": "785436",
+    "name": "에스티큐브",
+    "sector": "바이오",
+    "marketCap": "421조",
+    "price": 57260,
+    "change": 1809,
+    "changePercent": 3.16,
+    "volatility": "very-high",
+    "dividendYield": 5.6,
     "metaphors": {
-      "INTP": "사이클의 바닥. 회복을 기다리는 저평가주.",
-      "ISTJ": "기초 화학의 거인. 장기 관점 투자.",
-      "default": "석유화학 기업"
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["화학", "가치주", "사이클", "배당주"]
+    "tags": [
+      "성장주",
+      "우량주",
+      "고변동성",
+      "바이오"
+    ]
   },
   {
-    "ticker": "034220",
-    "name": "LG디스플레이",
-    "sector": "디스플레이",
-    "marketCap": "5조",
-    "price": 14500,
-    "change": 250,
-    "changePercent": 1.75,
+    "ticker": "885288",
+    "name": "지씨셀",
+    "sector": "바이오",
+    "marketCap": "280조",
+    "price": 945222,
+    "change": -37462,
+    "changePercent": -3.96,
+    "volatility": "very-high",
+    "dividendYield": 4.9,
+    "metaphors": {
+      "INTJ": "데이터와 임상으로 증명하는 생명의 가치.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "불가능을 가능케 하는 혁신 신약의 꿈.",
+      "default": "차세대 신약 개발로 창조하는 생명 연장의 꿈",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "대형주",
+      "혁신",
+      "바이오"
+    ]
+  },
+  {
+    "ticker": "541685",
+    "name": "에코프로",
+    "sector": "2차전지",
+    "marketCap": "487조",
+    "price": 276120,
+    "change": 21103,
+    "changePercent": 7.64,
+    "volatility": "very-high",
+    "dividendYield": 3.1,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "강소기업",
+      "성장주",
+      "2차전지"
+    ]
+  },
+  {
+    "ticker": "693245",
+    "name": "에코프로비엠",
+    "sector": "2차전지",
+    "marketCap": "152조",
+    "price": 807666,
+    "change": -39331,
+    "changePercent": -4.87,
+    "volatility": "very-high",
+    "dividendYield": 4.8,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "AI",
+      "가치주",
+      "2차전지"
+    ]
+  },
+  {
+    "ticker": "830597",
+    "name": "엘앤에프",
+    "sector": "2차전지",
+    "marketCap": "280조",
+    "price": 175274,
+    "change": -2674,
+    "changePercent": -1.53,
     "volatility": "high",
-    "dividendYield": 0,
+    "dividendYield": 2.6,
     "metaphors": {
-      "INTP": "OLED의 선구자. 기술 혁신의 역사.",
-      "ISTP": "기술력의 결정체. 패널 기술의 장인.",
-      "default": "OLED 디스플레이 선도 기업"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["디스플레이", "OLED", "기술주", "턴어라운드"]
+    "tags": [
+      "친환경",
+      "글로벌",
+      "AI",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "000720",
-    "name": "현대건설",
-    "sector": "건설",
-    "marketCap": "4조",
-    "price": 38000,
-    "change": 500,
-    "changePercent": 1.33,
+    "ticker": "406768",
+    "name": "엔켐",
+    "sector": "2차전지",
+    "marketCap": "308조",
+    "price": 705215,
+    "change": -24028,
+    "changePercent": -3.41,
+    "volatility": "high",
+    "dividendYield": 4.8,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "가치주",
+      "성장주",
+      "2차전지"
+    ]
+  },
+  {
+    "ticker": "835197",
+    "name": "나노신소재",
+    "sector": "2차전지",
+    "marketCap": "363조",
+    "price": 444765,
+    "change": -37654,
+    "changePercent": -8.47,
+    "volatility": "very-high",
+    "dividendYield": 5.5,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "친환경",
+      "가치주",
+      "2차전지"
+    ]
+  },
+  {
+    "ticker": "550588",
+    "name": "대주전자재료",
+    "sector": "2차전지",
+    "marketCap": "315조",
+    "price": 410887,
+    "change": -14529,
+    "changePercent": -3.54,
     "volatility": "medium",
-    "dividendYield": 3.0,
+    "dividendYield": 4.4,
     "metaphors": {
-      "ISTJ": "건설 명가. 안정적인 실적 기반.",
-      "ESTJ": "체계적인 프로젝트 관리. 효율성.",
-      "default": "현대차그룹 건설사"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["건설", "가치주", "배당주", "대형주"]
+    "tags": [
+      "친환경",
+      "배당주",
+      "혁신",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "003550",
-    "name": "LG",
-    "sector": "지주회사",
-    "marketCap": "12조",
-    "price": 78000,
-    "change": 1000,
-    "changePercent": 1.30,
-    "volatility": "low",
-    "dividendYield": 3.5,
+    "ticker": "713581",
+    "name": "천보",
+    "sector": "2차전지",
+    "marketCap": "118조",
+    "price": 188301,
+    "change": 13775,
+    "changePercent": 7.32,
+    "volatility": "very-high",
+    "dividendYield": 1.1,
     "metaphors": {
-      "ISTJ": "LG그룹의 중심. 다각화된 포트폴리오.",
-      "ISFJ": "안정적 배당. 오랜 역사의 신뢰.",
-      "default": "LG그룹 지주회사"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["지주회사", "배당주", "안정주", "대형주"]
+    "tags": [
+      "고변동성",
+      "AI",
+      "친환경",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "004020",
-    "name": "현대제철",
-    "sector": "철강",
-    "marketCap": "5조",
-    "price": 32000,
-    "change": 450,
-    "changePercent": 1.43,
-    "volatility": "medium",
-    "dividendYield": 2.5,
-    "metaphors": {
-      "ISTJ": "철강의 기반. 자동차와 건설의 근간.",
-      "INTP": "사이클 저점. 회복을 기다리는 가치주.",
-      "default": "현대차그룹 철강사"
-    },
-    "tags": ["철강", "가치주", "사이클", "배당주"]
-  },
-  {
-    "ticker": "005940",
-    "name": "NH투자증권",
-    "sector": "증권",
-    "marketCap": "3조",
-    "price": 12500,
-    "change": 200,
-    "changePercent": 1.63,
+    "ticker": "697496",
+    "name": "성일하이텍",
+    "sector": "2차전지",
+    "marketCap": "336조",
+    "price": 196226,
+    "change": -4040,
+    "changePercent": -2.06,
     "volatility": "medium",
     "dividendYield": 5.5,
     "metaphors": {
-      "ISTJ": "증권의 클래식. 안정적인 수수료 수익.",
-      "ISFJ": "높은 배당. 꾸준한 현금흐름.",
-      "default": "종합 증권사"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["금융", "증권", "배당주", "가치주"]
+    "tags": [
+      "성장주",
+      "글로벌",
+      "친환경",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "002380",
-    "name": "KCC",
-    "sector": "화학",
-    "marketCap": "3조",
-    "price": 245000,
-    "change": 3500,
-    "changePercent": 1.45,
+    "ticker": "870701",
+    "name": "새빗켐",
+    "sector": "2차전지",
+    "marketCap": "235조",
+    "price": 54176,
+    "change": -2889,
+    "changePercent": -5.33,
     "volatility": "low",
-    "dividendYield": 2.0,
+    "dividendYield": 1.7,
     "metaphors": {
-      "ISTJ": "안정적인 건자재. 오랜 역사의 기업.",
-      "INTP": "숨겨진 가치주. 견고한 재무구조.",
-      "default": "건자재 및 실리콘 기업"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["화학", "건자재", "가치주", "안정주"]
+    "tags": [
+      "고변동성",
+      "우량주",
+      "AI",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "066570",
-    "name": "LG전자",
-    "sector": "가전",
-    "marketCap": "15조",
-    "price": 92000,
-    "change": 1500,
-    "changePercent": 1.66,
+    "ticker": "565071",
+    "name": "윤성에프앤씨",
+    "sector": "2차전지",
+    "marketCap": "488조",
+    "price": 398095,
+    "change": 24744,
+    "changePercent": 6.22,
     "volatility": "medium",
-    "dividendYield": 2.0,
+    "dividendYield": 1.3,
     "metaphors": {
-      "ISTJ": "가전의 클래식. 안정적인 글로벌 브랜드.",
-      "ESTJ": "효율적인 제품 라인업. 체계적 성장.",
-      "default": "글로벌 가전 및 전장 기업"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["가전", "대형주", "배당주", "전장"]
+    "tags": [
+      "고변동성",
+      "배당주",
+      "대형주",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "108860",
-    "name": "셀바스AI",
-    "sector": "AI",
-    "marketCap": "5000억",
-    "price": 8500,
-    "change": 450,
-    "changePercent": 5.59,
+    "ticker": "340355",
+    "name": "더블유씨피",
+    "sector": "2차전지",
+    "marketCap": "431조",
+    "price": 324914,
+    "change": 28903,
+    "changePercent": 8.9,
     "volatility": "very-high",
-    "dividendYield": 0,
+    "dividendYield": 1.5,
     "metaphors": {
-      "INTP": "AI의 미래. 음성인식 기술의 선구자.",
-      "ENTP": "신산업 도전! AI 헬스케어의 가능성.",
-      "default": "AI 기반 음성인식 및 헬스케어"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["AI", "신산업", "고변동성", "성장주"]
+    "tags": [
+      "대형주",
+      "성장주",
+      "우량주",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "950130",
-    "name": "엔지켐생명과학",
-    "sector": "바이오",
-    "marketCap": "5000억",
-    "price": 12000,
-    "change": 850,
-    "changePercent": 7.63,
+    "ticker": "152041",
+    "name": "제이오",
+    "sector": "2차전지",
+    "marketCap": "14조",
+    "price": 766467,
+    "change": -39806,
+    "changePercent": -5.19,
     "volatility": "very-high",
-    "dividendYield": 0,
+    "dividendYield": 0.2,
     "metaphors": {
-      "ENTP": "고위험 고수익! 신약 개발의 도박.",
-      "ESTP": "급등락의 스릴! 바이오의 롤러코스터.",
-      "default": "신약 개발 바이오 기업"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["바이오", "신약", "고변동성", "성장주"]
+    "tags": [
+      "친환경",
+      "성장주",
+      "혁신",
+      "2차전지"
+    ]
   },
   {
-    "ticker": "067160",
-    "name": "아프리카TV",
-    "sector": "인터넷",
-    "marketCap": "8000억",
-    "price": 85000,
-    "change": 2500,
-    "changePercent": 3.03,
+    "ticker": "883830",
+    "name": "중앙첨단소재",
+    "sector": "2차전지",
+    "marketCap": "488조",
+    "price": 435885,
+    "change": -18103,
+    "changePercent": -4.15,
+    "volatility": "medium",
+    "dividendYield": 0.9,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "가치주",
+      "친환경",
+      "2차전지"
+    ]
+  },
+  {
+    "ticker": "689394",
+    "name": "정석케미칼",
+    "sector": "2차전지",
+    "marketCap": "478조",
+    "price": 946014,
+    "change": -80303,
+    "changePercent": -8.49,
+    "volatility": "low",
+    "dividendYield": 5.1,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "전기차 시대의 심장을 만드는 거침없는 행보.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "친환경 미래를 앞당기는 에너지 소재의 주역",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "고변동성",
+      "AI",
+      "2차전지"
+    ]
+  },
+  {
+    "ticker": "568196",
+    "name": "엔씨소프트",
+    "sector": "게임",
+    "marketCap": "43조",
+    "price": 439010,
+    "change": 7134,
+    "changePercent": 1.63,
+    "volatility": "very-high",
+    "dividendYield": 1.6,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "대형주",
+      "고변동성",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "638625",
+    "name": "넷마블",
+    "sector": "게임",
+    "marketCap": "201조",
+    "price": 492586,
+    "change": -18540,
+    "changePercent": -3.76,
+    "volatility": "low",
+    "dividendYield": 1.7,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "배당주",
+      "혁신",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "435581",
+    "name": "크래프톤",
+    "sector": "게임",
+    "marketCap": "99조",
+    "price": 692582,
+    "change": 44896,
+    "changePercent": 6.48,
+    "volatility": "very-high",
+    "dividendYield": 4.3,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "혁신",
+      "배당주",
+      "친환경",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "109405",
+    "name": "카카오게임즈",
+    "sector": "게임",
+    "marketCap": "383조",
+    "price": 942132,
+    "change": 24359,
+    "changePercent": 2.59,
     "volatility": "high",
+    "dividendYield": 3.6,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "혁신",
+      "성장주",
+      "AI",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "951879",
+    "name": "펄어비스",
+    "sector": "게임",
+    "marketCap": "233조",
+    "price": 642239,
+    "change": 32934,
+    "changePercent": 5.13,
+    "volatility": "low",
+    "dividendYield": 1.0,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "고변동성",
+      "우량주",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "811322",
+    "name": "위메이드",
+    "sector": "게임",
+    "marketCap": "469조",
+    "price": 891780,
+    "change": 81094,
+    "changePercent": 9.09,
+    "volatility": "medium",
+    "dividendYield": 3.1,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "혁신",
+      "AI",
+      "강소기업",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "489212",
+    "name": "컴투스",
+    "sector": "게임",
+    "marketCap": "372조",
+    "price": 79951,
+    "change": -2017,
+    "changePercent": -2.52,
+    "volatility": "very-high",
+    "dividendYield": 1.8,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "혁신",
+      "고변동성",
+      "가치주",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "259872",
+    "name": "데브시스터즈",
+    "sector": "게임",
+    "marketCap": "142조",
+    "price": 958345,
+    "change": -9438,
+    "changePercent": -0.98,
+    "volatility": "medium",
+    "dividendYield": 1.7,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "글로벌",
+      "성장주",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "469687",
+    "name": "넥슨게임즈",
+    "sector": "게임",
+    "marketCap": "373조",
+    "price": 243352,
+    "change": -5059,
+    "changePercent": -2.08,
+    "volatility": "high",
+    "dividendYield": 5.9,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "글로벌",
+      "고변동성",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "882382",
+    "name": "네오위즈",
+    "sector": "게임",
+    "marketCap": "227조",
+    "price": 411716,
+    "change": 6213,
+    "changePercent": 1.51,
+    "volatility": "very-high",
+    "dividendYield": 5.8,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "성장주",
+      "강소기업",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "376539",
+    "name": "위메이드맥스",
+    "sector": "게임",
+    "marketCap": "96조",
+    "price": 369891,
+    "change": -12427,
+    "changePercent": -3.36,
+    "volatility": "low",
+    "dividendYield": 0.2,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "상상력이 현실이 되는 무한한 유니버스.",
+      "default": "글로벌 시장을 사로잡는 강력한 IP 보유사",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "성장주",
+      "배당주",
+      "게임"
+    ]
+  },
+  {
+    "ticker": "923706",
+    "name": "하이브",
+    "sector": "엔터",
+    "marketCap": "9조",
+    "price": 168862,
+    "change": -6174,
+    "changePercent": -3.66,
+    "volatility": "medium",
+    "dividendYield": 2.5,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "배당주",
+      "대형주",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "410102",
+    "name": "JYP Ent.",
+    "sector": "엔터",
+    "marketCap": "337조",
+    "price": 51692,
+    "change": -3528,
+    "changePercent": -6.83,
+    "volatility": "high",
+    "dividendYield": 4.8,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "강소기업",
+      "우량주",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "740253",
+    "name": "에스엠",
+    "sector": "엔터",
+    "marketCap": "271조",
+    "price": 784403,
+    "change": 23692,
+    "changePercent": 3.02,
+    "volatility": "medium",
+    "dividendYield": 2.1,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "대형주",
+      "배당주",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "676687",
+    "name": "와이지엔터테인먼트",
+    "sector": "엔터",
+    "marketCap": "5397억",
+    "price": 20470,
+    "change": 565,
+    "changePercent": 2.76,
+    "volatility": "low",
     "dividendYield": 0.5,
     "metaphors": {
-      "ENFP": "1인 미디어의 선구자! 창작자 경제.",
-      "ESFP": "재미있는 콘텐츠! 라이브 스트리밍.",
-      "default": "라이브 스트리밍 플랫폼"
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
     },
-    "tags": ["인터넷", "콘텐츠", "플랫폼", "성장주"]
+    "tags": [
+      "배당주",
+      "글로벌",
+      "친환경",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "304734",
+    "name": "디어유",
+    "sector": "엔터",
+    "marketCap": "174조",
+    "price": 736821,
+    "change": 14339,
+    "changePercent": 1.95,
+    "volatility": "very-high",
+    "dividendYield": 5.7,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "성장주",
+      "친환경",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "608676",
+    "name": "팬엔터테인먼트",
+    "sector": "엔터",
+    "marketCap": "468조",
+    "price": 347070,
+    "change": 28879,
+    "changePercent": 8.32,
+    "volatility": "low",
+    "dividendYield": 4.4,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "성장주",
+      "글로벌",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "155926",
+    "name": "큐브엔터",
+    "sector": "엔터",
+    "marketCap": "500조",
+    "price": 933650,
+    "change": 48329,
+    "changePercent": 5.18,
+    "volatility": "high",
+    "dividendYield": 6.0,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "고변동성",
+      "가치주",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "414661",
+    "name": "감성코퍼레이션",
+    "sector": "엔터",
+    "marketCap": "327조",
+    "price": 550142,
+    "change": 34162,
+    "changePercent": 6.21,
+    "volatility": "very-high",
+    "dividendYield": 4.5,
+    "metaphors": {
+      "INTJ": "치밀한 계획으로 미래를 준비하는 설계자.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "K-컬처의 글로벌 확산을 선도하는 엔터 제국",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "대형주",
+      "성장주",
+      "엔터"
+    ]
+  },
+  {
+    "ticker": "051426",
+    "name": "NAVER",
+    "sector": "플랫폼/IT",
+    "marketCap": "210조",
+    "price": 631488,
+    "change": 30692,
+    "changePercent": 4.86,
+    "volatility": "low",
+    "dividendYield": 1.7,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "배당주",
+      "성장주",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "979725",
+    "name": "카카오",
+    "sector": "플랫폼/IT",
+    "marketCap": "2265억",
+    "price": 5855,
+    "change": 535,
+    "changePercent": 9.14,
+    "volatility": "very-high",
+    "dividendYield": 4.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "우량주",
+      "AI",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "018433",
+    "name": "카카오뱅크",
+    "sector": "플랫폼/IT",
+    "marketCap": "59조",
+    "price": 563041,
+    "change": 21242,
+    "changePercent": 3.77,
+    "volatility": "low",
+    "dividendYield": 0.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "글로벌",
+      "혁신",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "814241",
+    "name": "카카오페이",
+    "sector": "플랫폼/IT",
+    "marketCap": "202조",
+    "price": 149521,
+    "change": -3103,
+    "changePercent": -2.08,
+    "volatility": "very-high",
+    "dividendYield": 3.9,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "대형주",
+      "글로벌",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "090961",
+    "name": "안랩",
+    "sector": "플랫폼/IT",
+    "marketCap": "392조",
+    "price": 414065,
+    "change": 14138,
+    "changePercent": 3.41,
+    "volatility": "very-high",
+    "dividendYield": 4.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "고변동성",
+      "가치주",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "516343",
+    "name": "이스트소프트",
+    "sector": "플랫폼/IT",
+    "marketCap": "255조",
+    "price": 569842,
+    "change": 12042,
+    "changePercent": 2.11,
+    "volatility": "high",
+    "dividendYield": 0.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "대형주",
+      "가치주",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "766318",
+    "name": "솔트룩스",
+    "sector": "플랫폼/IT",
+    "marketCap": "77조",
+    "price": 913339,
+    "change": -74675,
+    "changePercent": -8.18,
+    "volatility": "medium",
+    "dividendYield": 4.9,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "고변동성",
+      "혁신",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "600231",
+    "name": "클로봇",
+    "sector": "플랫폼/IT",
+    "marketCap": "202조",
+    "price": 746515,
+    "change": -20849,
+    "changePercent": -2.79,
+    "volatility": "high",
+    "dividendYield": 1.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "고변동성",
+      "우량주",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "899318",
+    "name": "코난테크놀로지",
+    "sector": "플랫폼/IT",
+    "marketCap": "9조",
+    "price": 978624,
+    "change": -91097,
+    "changePercent": -9.31,
+    "volatility": "high",
+    "dividendYield": 1.4,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "강소기업",
+      "고변동성",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "676850",
+    "name": "마음AI",
+    "sector": "플랫폼/IT",
+    "marketCap": "151조",
+    "price": 739301,
+    "change": 48187,
+    "changePercent": 6.52,
+    "volatility": "high",
+    "dividendYield": 5.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "가치주",
+      "혁신",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "879606",
+    "name": "셀바스AI",
+    "sector": "플랫폼/IT",
+    "marketCap": "320조",
+    "price": 682871,
+    "change": 2549,
+    "changePercent": 0.37,
+    "volatility": "high",
+    "dividendYield": 0.8,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "배당주",
+      "대형주",
+      "플랫폼/IT"
+    ]
+  },
+  {
+    "ticker": "650352",
+    "name": "레인보우로보틱스",
+    "sector": "로봇",
+    "marketCap": "288조",
+    "price": 905269,
+    "change": -34770,
+    "changePercent": -3.84,
+    "volatility": "very-high",
+    "dividendYield": 0.9,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "고변동성",
+      "가치주",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "482732",
+    "name": "두산로보틱스",
+    "sector": "로봇",
+    "marketCap": "195조",
+    "price": 665278,
+    "change": -31917,
+    "changePercent": -4.8,
+    "volatility": "very-high",
+    "dividendYield": 4.9,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "우량주",
+      "성장주",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "112043",
+    "name": "유진로봇",
+    "sector": "로봇",
+    "marketCap": "363조",
+    "price": 947801,
+    "change": 971,
+    "changePercent": 0.1,
+    "volatility": "high",
+    "dividendYield": 4.4,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "AI",
+      "글로벌",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "786675",
+    "name": "로보티즈",
+    "sector": "로봇",
+    "marketCap": "476조",
+    "price": 458027,
+    "change": -12088,
+    "changePercent": -2.64,
+    "volatility": "high",
+    "dividendYield": 2.8,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "배당주",
+      "강소기업",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "438089",
+    "name": "유일로보틱스",
+    "sector": "로봇",
+    "marketCap": "194조",
+    "price": 183733,
+    "change": 4484,
+    "changePercent": 2.44,
+    "volatility": "very-high",
+    "dividendYield": 3.2,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "AI",
+      "대형주",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "102727",
+    "name": "에스비비테크",
+    "sector": "로봇",
+    "marketCap": "6874억",
+    "price": 22876,
+    "change": -931,
+    "changePercent": -4.07,
+    "volatility": "low",
+    "dividendYield": 3.4,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "배당주",
+      "강소기업",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "619634",
+    "name": "뉴로메카",
+    "sector": "로봇",
+    "marketCap": "54조",
+    "price": 379819,
+    "change": -3344,
+    "changePercent": -0.88,
+    "volatility": "high",
+    "dividendYield": 1.1,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "대형주",
+      "배당주",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "918831",
+    "name": "하이젠알앤엠",
+    "sector": "로봇",
+    "marketCap": "188조",
+    "price": 181570,
+    "change": -15008,
+    "changePercent": -8.27,
+    "volatility": "medium",
+    "dividendYield": 3.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "배당주",
+      "AI",
+      "로봇"
+    ]
+  },
+  {
+    "ticker": "858895",
+    "name": "POSCO홀딩스",
+    "sector": "에너지/소재",
+    "marketCap": "291조",
+    "price": 652632,
+    "change": -42300,
+    "changePercent": -6.48,
+    "volatility": "medium",
+    "dividendYield": 3.8,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "혁신",
+      "우량주",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "221096",
+    "name": "포스코퓨처엠",
+    "sector": "에너지/소재",
+    "marketCap": "347조",
+    "price": 892067,
+    "change": -61497,
+    "changePercent": -6.89,
+    "volatility": "medium",
+    "dividendYield": 5.2,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "강소기업",
+      "성장주",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "861887",
+    "name": "LG화학",
+    "sector": "에너지/소재",
+    "marketCap": "3조",
+    "price": 360605,
+    "change": -30365,
+    "changePercent": -8.42,
+    "volatility": "low",
+    "dividendYield": 3.4,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "배당주",
+      "글로벌",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "748433",
+    "name": "삼성SDI",
+    "sector": "에너지/소재",
+    "marketCap": "264조",
+    "price": 537360,
+    "change": 31480,
+    "changePercent": 5.86,
+    "volatility": "high",
+    "dividendYield": 0.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "우량주",
+      "배당주",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "024481",
+    "name": "SK이노베이션",
+    "sector": "에너지/소재",
+    "marketCap": "7755억",
+    "price": 9951,
+    "change": 828,
+    "changePercent": 8.32,
+    "volatility": "low",
+    "dividendYield": 4.4,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "성장주",
+      "배당주",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "502079",
+    "name": "LS마린솔루션",
+    "sector": "에너지/소재",
+    "marketCap": "247조",
+    "price": 587567,
+    "change": 29716,
+    "changePercent": 5.06,
+    "volatility": "low",
+    "dividendYield": 3.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "혁신",
+      "고변동성",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "619729",
+    "name": "비에이치아이",
+    "sector": "에너지/소재",
+    "marketCap": "476조",
+    "price": 361933,
+    "change": 18969,
+    "changePercent": 5.24,
+    "volatility": "very-high",
+    "dividendYield": 0.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "배당주",
+      "글로벌",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "983009",
+    "name": "우리기술",
+    "sector": "에너지/소재",
+    "marketCap": "200조",
+    "price": 179784,
+    "change": 10019,
+    "changePercent": 5.57,
+    "volatility": "medium",
+    "dividendYield": 1.8,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "AI",
+      "가치주",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "122469",
+    "name": "에코프로에이치엔",
+    "sector": "에너지/소재",
+    "marketCap": "140조",
+    "price": 129861,
+    "change": -12058,
+    "changePercent": -9.29,
+    "volatility": "high",
+    "dividendYield": 5.2,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "배당주",
+      "가치주",
+      "AI",
+      "에너지/소재"
+    ]
+  },
+  {
+    "ticker": "157493",
+    "name": "신한지주",
+    "sector": "금융",
+    "marketCap": "238조",
+    "price": 293536,
+    "change": -15714,
+    "changePercent": -5.35,
+    "volatility": "low",
+    "dividendYield": 4.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "고변동성",
+      "혁신",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "769289",
+    "name": "KB금융",
+    "sector": "금융",
+    "marketCap": "29조",
+    "price": 608318,
+    "change": 24327,
+    "changePercent": 4.0,
+    "volatility": "medium",
+    "dividendYield": 3.1,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "대형주",
+      "가치주",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "029369",
+    "name": "하나금융지주",
+    "sector": "금융",
+    "marketCap": "11조",
+    "price": 917715,
+    "change": -61014,
+    "changePercent": -6.65,
+    "volatility": "medium",
+    "dividendYield": 3.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "강소기업",
+      "친환경",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "161255",
+    "name": "우리금융지주",
+    "sector": "금융",
+    "marketCap": "71조",
+    "price": 175370,
+    "change": 2952,
+    "changePercent": 1.68,
+    "volatility": "medium",
+    "dividendYield": 1.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "가치주",
+      "성장주",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "117151",
+    "name": "메리츠금융지주",
+    "sector": "금융",
+    "marketCap": "32조",
+    "price": 334118,
+    "change": 8133,
+    "changePercent": 2.43,
+    "volatility": "very-high",
+    "dividendYield": 5.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "대형주",
+      "고변동성",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "098823",
+    "name": "삼성증권",
+    "sector": "금융",
+    "marketCap": "179조",
+    "price": 68192,
+    "change": 211,
+    "changePercent": 0.31,
+    "volatility": "very-high",
+    "dividendYield": 2.7,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "배당주",
+      "고변동성",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "769284",
+    "name": "미래에셋증권",
+    "sector": "금융",
+    "marketCap": "108조",
+    "price": 288520,
+    "change": 26646,
+    "changePercent": 9.24,
+    "volatility": "very-high",
+    "dividendYield": 2.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "우량주",
+      "혁신",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "254003",
+    "name": "NH투자증권",
+    "sector": "금융",
+    "marketCap": "286조",
+    "price": 416719,
+    "change": 9917,
+    "changePercent": 2.38,
+    "volatility": "medium",
+    "dividendYield": 0.1,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "대형주",
+      "성장주",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "132268",
+    "name": "인카금융서비스",
+    "sector": "금융",
+    "marketCap": "342조",
+    "price": 356341,
+    "change": -27805,
+    "changePercent": -7.8,
+    "volatility": "very-high",
+    "dividendYield": 5.1,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "혁신",
+      "대형주",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "904488",
+    "name": "코나아이",
+    "sector": "금융",
+    "marketCap": "14조",
+    "price": 179142,
+    "change": 9924,
+    "changePercent": 5.54,
+    "volatility": "high",
+    "dividendYield": 6.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "고변동성",
+      "배당주",
+      "금융"
+    ]
+  },
+  {
+    "ticker": "951411",
+    "name": "현대차",
+    "sector": "자동차",
+    "marketCap": "293조",
+    "price": 67134,
+    "change": -3024,
+    "changePercent": -4.5,
+    "volatility": "high",
+    "dividendYield": 2.5,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "배당주",
+      "대형주",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "558753",
+    "name": "기아",
+    "sector": "자동차",
+    "marketCap": "497조",
+    "price": 630303,
+    "change": 53901,
+    "changePercent": 8.55,
+    "volatility": "very-high",
+    "dividendYield": 3.0,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "배당주",
+      "고변동성",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "440825",
+    "name": "현대모비스",
+    "sector": "자동차",
+    "marketCap": "279조",
+    "price": 869264,
+    "change": 68169,
+    "changePercent": 7.84,
+    "volatility": "low",
+    "dividendYield": 2.7,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "성장주",
+      "친환경",
+      "글로벌",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "221036",
+    "name": "현대위아",
+    "sector": "자동차",
+    "marketCap": "22조",
+    "price": 445047,
+    "change": -10522,
+    "changePercent": -2.36,
+    "volatility": "medium",
+    "dividendYield": 1.5,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "글로벌",
+      "대형주",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "815261",
+    "name": "에스엘",
+    "sector": "자동차",
+    "marketCap": "22조",
+    "price": 550066,
+    "change": -47011,
+    "changePercent": -8.55,
+    "volatility": "medium",
+    "dividendYield": 4.2,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "AI",
+      "성장주",
+      "배당주",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "372173",
+    "name": "화신",
+    "sector": "자동차",
+    "marketCap": "19조",
+    "price": 893919,
+    "change": -37982,
+    "changePercent": -4.25,
+    "volatility": "high",
+    "dividendYield": 0.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "성장주",
+      "AI",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "511359",
+    "name": "성우하이텍",
+    "sector": "자동차",
+    "marketCap": "110조",
+    "price": 733677,
+    "change": 2082,
+    "changePercent": 0.28,
+    "volatility": "low",
+    "dividendYield": 4.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "글로벌",
+      "AI",
+      "자동차"
+    ]
+  },
+  {
+    "ticker": "421259",
+    "name": "CJ제일제당",
+    "sector": "소비재/기타",
+    "marketCap": "413조",
+    "price": 836605,
+    "change": -43725,
+    "changePercent": -5.23,
+    "volatility": "high",
+    "dividendYield": 1.6,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "대형주",
+      "가치주",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "787554",
+    "name": "오리온",
+    "sector": "소비재/기타",
+    "marketCap": "282조",
+    "price": 326974,
+    "change": -31372,
+    "changePercent": -9.59,
+    "volatility": "high",
+    "dividendYield": 5.2,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "친환경",
+      "AI",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "131287",
+    "name": "농심",
+    "sector": "소비재/기타",
+    "marketCap": "163조",
+    "price": 543305,
+    "change": 26662,
+    "changePercent": 4.91,
+    "volatility": "medium",
+    "dividendYield": 4.1,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "친환경",
+      "강소기업",
+      "글로벌",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "032149",
+    "name": "삼양식품",
+    "sector": "소비재/기타",
+    "marketCap": "409조",
+    "price": 707306,
+    "change": 2952,
+    "changePercent": 0.42,
+    "volatility": "low",
+    "dividendYield": 5.9,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "강소기업",
+      "AI",
+      "고변동성",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "698399",
+    "name": "매일유업",
+    "sector": "소비재/기타",
+    "marketCap": "468조",
+    "price": 305764,
+    "change": -29081,
+    "changePercent": -9.51,
+    "volatility": "medium",
+    "dividendYield": 0.5,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "글로벌",
+      "고변동성",
+      "성장주",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "852513",
+    "name": "빙그레",
+    "sector": "소비재/기타",
+    "marketCap": "329조",
+    "price": 432976,
+    "change": -34158,
+    "changePercent": -7.89,
+    "volatility": "high",
+    "dividendYield": 1.2,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "우량주",
+      "강소기업",
+      "AI",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "960451",
+    "name": "아모레퍼시픽",
+    "sector": "소비재/기타",
+    "marketCap": "218조",
+    "price": 374292,
+    "change": -5894,
+    "changePercent": -1.57,
+    "volatility": "low",
+    "dividendYield": 1.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "가치주",
+      "혁신",
+      "글로벌",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "095812",
+    "name": "LG생활건강",
+    "sector": "소비재/기타",
+    "marketCap": "265조",
+    "price": 703075,
+    "change": 50758,
+    "changePercent": 7.22,
+    "volatility": "high",
+    "dividendYield": 1.4,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "AI",
+      "글로벌",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "166527",
+    "name": "코스맥스",
+    "sector": "소비재/기타",
+    "marketCap": "76조",
+    "price": 768805,
+    "change": 35494,
+    "changePercent": 4.62,
+    "volatility": "high",
+    "dividendYield": 4.3,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "고변동성",
+      "강소기업",
+      "혁신",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "658326",
+    "name": "한국콜마",
+    "sector": "소비재/기타",
+    "marketCap": "342조",
+    "price": 168062,
+    "change": -14842,
+    "changePercent": -8.83,
+    "volatility": "high",
+    "dividendYield": 2.7,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "성장주",
+      "강소기업",
+      "소비재/기타"
+    ]
+  },
+  {
+    "ticker": "975133",
+    "name": "펌텍코리아",
+    "sector": "소비재/기타",
+    "marketCap": "7106억",
+    "price": 11348,
+    "change": -359,
+    "changePercent": -3.16,
+    "volatility": "high",
+    "dividendYield": 2.7,
+    "metaphors": {
+      "INTJ": "방대한 데이터를 지식으로 바꾸는 인텔리전스.",
+      "ENTJ": "압도적인 리더십으로 시장을 선도하는 리더.",
+      "ENFP": "무한한 호기심으로 새로운 가치를 만드는 탐험가.",
+      "default": "디지털 전환 시대의 핵심 플랫폼 및 IT 솔루션",
+      "INTP": "원리를 이해하고 시스템을 최적화하는 분석가.",
+      "INFJ": "가치 지향적 목표를 향해 묵묵히 나아가는 비전형 인재."
+    },
+    "tags": [
+      "대형주",
+      "친환경",
+      "강소기업",
+      "소비재/기타"
+    ]
   }
 ]
