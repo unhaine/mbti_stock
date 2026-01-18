@@ -4,6 +4,7 @@ import toast from 'react-hot-toast'
 import { useMBTI } from '../hooks'
 import { formatCurrency, formatPercent } from '../utils/formatters'
 import { cn } from '../utils/helpers'
+import { useAuth } from '../contexts/AuthContext'
 import Header from '../components/layout/Header'
 import FooterNav from '../components/layout/FooterNav'
 import StockDetailBottomSheet from '../components/features/stock/StockDetailBottomSheet'
@@ -32,6 +33,7 @@ interface PortfolioItemData {
 }
 
 export default function PortfolioPage() {
+  const { user } = useAuth()
   const [storedMBTI] = useMBTI()
   const mbti = storedMBTI || 'INTJ'
   const [selectedStock, setSelectedStock] = useState<Stock | null>(null)
@@ -56,11 +58,13 @@ export default function PortfolioPage() {
 
   const { portfolioStore, setPortfolioStore, transactions, refresh } = usePortfolioContext()
 
-  // 가상 포트폴리오 초기화
+  // 가상 포트폴리오 초기화 (로그인하지 않은 유저 전용)
   useEffect(() => {
+    if (user) return // 로그인 유저는 서버 데이터만 사용
     if (portfolioStore?.stocks && portfolioStore.stocks.length > 0) return
-    if (masterStocks.length === 0) return // Wait for stocks to load
+    if (masterStocks.length === 0) return 
 
+    console.log('[PortfolioPage] Initializing virtual portfolio for guest user...')
     const riskLevel: number =
       ({
         'very-low': 0.1,
@@ -99,7 +103,7 @@ export default function PortfolioPage() {
       cash: initialCash,
       stocks: initialStocks,
     })
-  }, [mbtiProfile, portfolioStore, setPortfolioStore, masterStocks])
+  }, [user, mbtiProfile, portfolioStore, setPortfolioStore, masterStocks])
 
   const portfolioData = useMemo(() => {
     const data = (portfolioStore?.stocks || [])

@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, useCallback, useMemo, ReactNode } from 'react'
 import { useAuth } from './AuthContext.tsx'
 import useLocalStorage from '../hooks/useLocalStorage'
 import { KEYS } from '../utils/storage'
 import toast from 'react-hot-toast'
-import { logStockBuy, logStockSell } from '../services/analytics'
+import { logStockBuy } from '../services/analytics'
 
 import { Stock, Transaction, PortfolioStore, Portfolio } from '../types'
 
@@ -47,9 +47,7 @@ interface LocalPortfolio {
   }>
 }
 
-interface LocalTransaction extends Transaction {
-  id: string
-}
+// LocalTransaction removed
 
 export interface Holding {
   id: string
@@ -157,7 +155,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     } finally {
       setIsLoading(false)
     }
-  }, [user, migrationInProgress, localPortfolio.cash, localPortfolio.stocks.length])
+  }, [user])
 
   useEffect(() => {
     if (user) {
@@ -169,8 +167,9 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     }
   }, [user, fetchPortfolioData])
 
-  const portfolioStore: PortfolioStore = user
-    ? {
+  const portfolioStore: PortfolioStore = useMemo(() => {
+    if (user) {
+      return {
         cash: portfolio?.cash_balance ?? 10000000,
         stocks: (holdings || []).map((h) => ({
           ticker: h.ticker,
@@ -178,10 +177,12 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
           avgPrice: h.avg_price,
         })),
       }
-    : localPortfolio || {
+    }
+    return localPortfolio || {
         cash: 10000000,
         stocks: [],
       }
+  }, [user, portfolio?.cash_balance, holdings, localPortfolio])
 
   const buyStock = async (stock: Stock, quantity: number, price: number): Promise<boolean> => {
     if (!user) {
