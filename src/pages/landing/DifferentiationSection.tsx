@@ -37,7 +37,7 @@ const DifferentiationSection = forwardRef<HTMLDivElement, any>((_, ref) => {
         </motion.div>
 
         {/* 비교 영역 - Flat Style */}
-        <div className="mb-20">
+        <div className="mb-20 text-center">
           {/* 기존 방식 */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
