@@ -45,18 +45,6 @@ export default function ThemeSelector({
         ref={themeNavRef}
         className="flex overflow-x-auto scrollbar-hide px-4 py-3 gap-2 bg-white snap-x snap-mandatory"
       >
-        <button
-          ref={selectedTheme === -1 ? activeThemeRef : null}
-          onClick={() => onSelectTheme(-1)}
-          className={cn(
-            "shrink-0 px-4 py-1.5 rounded-full text-[13px] font-bold transition-all border snap-start scroll-ml-4",
-            selectedTheme === -1 
-              ? "bg-secondary-900 border-secondary-900 text-white shadow-sm" 
-              : "bg-white border-secondary-100 text-secondary-500 hover:border-secondary-300"
-          )}
-        >
-          ✨ 실시간 랭킹
-        </button>
         {themes.map((theme, index) => (
           <button
             key={theme.id || index}
