@@ -8,7 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "test": "vitest",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "sync:prices": "npx tsx scripts/sync-daily-prices.ts",
+    "sync:financials": "npx tsx scripts/sync-financials.ts",
+    "sync:corp-codes": "npx tsx scripts/download-corp-codes.ts",
+    "fix:themes": "node scripts/fix-themes-data.js"
   },
   "keywords": [
     "mbti",
@@ -21,25 +26,42 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@supabase/supabase-js": "^2.90.1",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
     "framer-motion": "^12.26.2",
+    "iconv-lite": "^0.7.2",
+    "jschardet": "^3.1.4",
     "lucide-react": "^0.562.0",
+    "node-fetch": "^3.3.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-hot-toast": "^2.6.0",
     "react-router-dom": "^7.12.0",
     "react-simple-pull-to-refresh": "^1.3.4",
-    "recharts": "^3.6.0"
+    "recharts": "^3.6.0",
+    "tailwind-merge": "^3.4.0",
+    "unzipper": "^0.12.3",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "@types/unzipper": "^0.10.11",
+    "@types/xml2js": "^0.4.14",
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.23",
+    "dotenv": "^17.2.3",
+    "jsdom": "^27.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
+    "vitest": "^4.0.17",
     "zustand": "^5.0.10"
   }
 }

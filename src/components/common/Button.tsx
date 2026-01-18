@@ -11,6 +11,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
 }
 
+/**
+ * Button 컴포넌트
+ * 미니멀 디자인 - 빨간색 primary, 그레이 secondary
+ */
 export default function Button({
   children,
   variant = 'primary',
@@ -24,21 +28,27 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500'
+    'inline-flex items-center justify-center font-bold transition-all duration-200 rounded-xl focus:outline-none active:scale-[0.98]'
 
   const variants = {
+    // Primary: 빨간색 배경, 흰색 텍스트
     primary:
-      'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0',
+      'bg-primary-500 text-white hover:bg-primary-600',
+    // Secondary: 회색 배경
     secondary:
-      'bg-transparent border border-dark-400 text-dark-200 hover:bg-dark-700 hover:border-dark-300 hover:text-white',
-    ghost: 'bg-transparent text-dark-300 hover:bg-dark-700 hover:text-white',
-    danger: 'bg-red-500 text-white hover:bg-red-600',
+      'bg-secondary-100 text-secondary-700 hover:bg-secondary-200',
+    // Ghost: 투명 배경, 빨간색 텍스트
+    ghost: 
+      'bg-transparent text-primary-500 hover:bg-primary-50',
+    // Danger: 빨간색 (primary와 동일하지만 의미적 구분)
+    danger: 
+      'bg-error text-white hover:bg-red-700',
   }
 
   const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-5 py-2.5 text-base',
-    lg: 'px-7 py-3.5 text-lg',
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-3.5 text-lg',
   }
 
   return (
@@ -51,7 +61,7 @@ export default function Button({
         variants[variant],
         sizes[size],
         fullWidth && 'w-full',
-        (disabled || loading) && 'opacity-50 cursor-not-allowed',
+        (disabled || loading) && 'opacity-50 cursor-not-allowed active:scale-100',
         className
       )}
       {...props}

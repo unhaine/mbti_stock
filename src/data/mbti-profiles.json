@@ -38,7 +38,7 @@
   {
     "id": "ENTP",
     "name": "변론가",
-    "tagline": "뜨거운 논쟁을 즐기는 변론가",
+    "tagline": "논쟁을 즐기는 변론가",
     "description": "트렌드를 빠르게 읽고 도전적으로 투자하는 유형입니다.",
     "traits": ["창의적", "도전적", "혁신적"],
     "riskTolerance": "high",
@@ -98,7 +98,7 @@
   {
     "id": "ISTJ",
     "name": "현실주의자",
-    "tagline": "청렴결백한 논리주의자",
+    "tagline": "철저한 논리주의자",
     "description": "검증된 원칙을 철저히 따르는 안정 추구형 투자자입니다.",
     "traits": ["책임감", "신뢰성", "실용적"],
     "riskTolerance": "low",
@@ -170,7 +170,7 @@
   {
     "id": "ESTP",
     "name": "사업가",
-    "tagline": "모험을 즐기는 사업가",
+    "tagline": "모험심 강한 사업가",
     "description": "빠른 판단과 행동력으로 기회를 잡는 대담한 투자자입니다.",
     "traits": ["대담함", "행동력", "현실적"],
     "riskTolerance": "high",
@@ -182,7 +182,7 @@
   {
     "id": "ESFP",
     "name": "연예인",
-    "tagline": "자유로운 영혼의 연예인",
+    "tagline": "자유분방한 연예인",
     "description": "재미있고 핫한 것에 즉흥적으로 투자하는 유형입니다.",
     "traits": ["사교적", "즉흥적", "낙천적"],
     "riskTolerance": "high",

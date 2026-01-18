@@ -13,6 +13,7 @@ export default function useSettings() {
     if (updates.darkMode !== undefined) settings.setDarkMode(updates.darkMode)
     if (updates.soundEffects !== undefined) settings.setSoundEffects(updates.soundEffects)
     if (updates.refreshInterval !== undefined) settings.setRefreshInterval(updates.refreshInterval)
+    if (updates.aiEnabled !== undefined) settings.setAiEnabled(updates.aiEnabled)
   }
 
   return [settings, setSettings] as const

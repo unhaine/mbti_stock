@@ -3,26 +3,23 @@ import { motion, AnimatePresence } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { useMBTI } from '../hooks'
 import { formatCurrency, formatPercent } from '../utils/formatters'
-import { getChangeArrow, cn } from '../utils/helpers'
+import { cn } from '../utils/helpers'
 import Header from '../components/layout/Header'
 import FooterNav from '../components/layout/FooterNav'
-import Card from '../components/common/Card'
-import StockDetailModal from '../components/features/StockDetailModal'
-import PortfolioItem from '../components/features/PortfolioItem'
-import SortDropdown from '../components/features/SortDropdown'
+import StockDetailBottomSheet from '../components/features/stock/StockDetailBottomSheet'
+import PortfolioItem from '../components/features/portfolio/PortfolioItem'
+import SortDropdown from '../components/features/portfolio/SortDropdown'
 import PullToRefreshWrapper from '../components/common/PullToRefreshWrapper'
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import { PortfolioItemSkeleton, SkeletonList } from '../components/common/Skeleton'
+import ConfirmModal from '../components/common/ConfirmModal'
 import { usePortfolioContext } from '../contexts/PortfolioContext'
 import { useStockContext } from '../contexts/StockContext'
-import TransactionItem from '../components/features/TransactionItem'
-
-// JSON 데이터
+import TransactionItem from '../components/features/portfolio/TransactionItem'
 import profilesData from '../data/mbti-profiles.json'
-import stocksData from '../data/stocks.json'
-
+// import stocksData from '../data/stocks.json' // Removed
+import gamificationData from '../data/gamification.json'
 import { Stock } from '../contexts/StockContext'
-
+import { Wallet, TrendingUp, History, FolderOpen } from 'lucide-react'
 interface PortfolioItemData {
   ticker: string
   shares: number
@@ -44,41 +41,39 @@ export default function PortfolioPage() {
   const { stocks: masterStocks, refresh: refreshStocks } = useStockContext()
   const [isLoading, setIsLoading] = useState(true)
 
-  // 초기 로딩 시뮬레이션
+  // Roast State
+  const [isRoastModalOpen, setIsRoastModalOpen] = useState(false)
+  const [roastMessage, setRoastMessage] = useState('')
+
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 800)
     return () => clearTimeout(timer)
   }, [])
 
-  // MBTI 프로필
   const mbtiProfile = useMemo(() => {
     return profilesData.find((p) => p.id === mbti) || profilesData[0]
   }, [mbti])
 
-  // 공통 포트폴리오 훅 사용
   const { portfolioStore, setPortfolioStore, transactions, refresh } = usePortfolioContext()
 
-  // 가상 포트폴리오 데이터 초기화 (내부에 데이터가 없을 때만)
+  // 가상 포트폴리오 초기화
   useEffect(() => {
     if (portfolioStore?.stocks && portfolioStore.stocks.length > 0) return
+    if (masterStocks.length === 0) return // Wait for stocks to load
 
-    // 성향에 맞는 종목 필터링 및 생성
     const riskLevel: number =
-      (
-        {
-          'very-low': 0.1,
-          low: 0.3,
-          'low-medium': 0.4,
-          medium: 0.5,
-          'medium-high': 0.7,
-          high: 0.9,
-        } as any
-      )[mbtiProfile.riskTolerance] || 0.5
+      ({
+        'very-low': 0.1,
+        low: 0.3,
+        'low-medium': 0.4,
+        medium: 0.5,
+        'medium-high': 0.7,
+        high: 0.9,
+      } as any)[mbtiProfile.riskTolerance] || 0.5
 
-    const suitableStocks = (stocksData as any[]).filter((s) => {
-      const riskLevelVal = riskLevel
-      if (riskLevelVal < 0.4) return s.volatility === 'low' || s.volatility === 'medium'
-      if (riskLevelVal > 0.7) return s.volatility === 'high' || s.volatility === 'very-high'
+    const suitableStocks = masterStocks.filter((s) => {
+      if (riskLevel < 0.4) return s.volatility === 'low' || s.volatility === 'medium'
+      if (riskLevel > 0.7) return s.volatility === 'high' || s.volatility === 'very-high'
       return true
     })
 
@@ -106,7 +101,6 @@ export default function PortfolioPage() {
     })
   }, [mbtiProfile, portfolioStore, setPortfolioStore, masterStocks])
 
-  // 로컬 렌더링용 데이터 변환 (stocksData와 매칭)
   const portfolioData = useMemo(() => {
     const data = (portfolioStore?.stocks || [])
       .map((item: any) => {
@@ -129,7 +123,6 @@ export default function PortfolioPage() {
       })
       .filter((item): item is PortfolioItemData => item !== null)
 
-    // 정렬 적용
     switch (sortBy) {
       case 'profit':
         return data.sort((a, b) => b.profitPercent - a.profitPercent)
@@ -142,7 +135,6 @@ export default function PortfolioPage() {
     }
   }, [portfolioStore, masterStocks, sortBy])
 
-  // 총자산 계산
   const totals = useMemo(() => {
     const cash = portfolioStore?.cash || 0
     let stocksValue = 0
@@ -173,186 +165,148 @@ export default function PortfolioPage() {
     setIsModalOpen(true)
   }
 
-  // 새로고침 핸들러
   const handleRefresh = useCallback(async () => {
     await Promise.all([refresh(), refreshStocks()])
     toast.success('자산 현황이 업데이트되었습니다')
   }, [refresh, refreshStocks])
 
+  const handleRoast = () => {
+    const isGood = totals.profit >= 0
+    const roasts = isGood ? (gamificationData.roasts as any).good : (gamificationData.roasts as any).bad
+    const randIndex = Math.floor(Math.random() * roasts.length)
+    const msg = roasts[randIndex].replace('{mbti}', mbti)
+    setRoastMessage(msg)
+    setIsRoastModalOpen(true)
+  }
+
   return (
-    <div className="h-screen bg-dark-900 flex flex-col overflow-hidden">
+    <div className="h-screen bg-white flex flex-col overflow-hidden">
       <Header />
 
-      {/* 메인 콘텐츠 영역: 고정 + 스크롤 */}
-      <div className="flex-1 flex flex-col min-h-0 pt-14 pb-20">
-        {/* 1. 상단 고정 영역 (스크롤 안됨) */}
-        <div className="shrink-0 px-4 pt-2 bg-dark-900 z-10 shadow-sm shadow-dark-900/50 pb-2">
+      <div className="flex-1 flex flex-col min-h-0 pt-12 pb-14">
+        {/* 상단 고정 영역 */}
+        <div className="shrink-0 px-4 pt-4 bg-white">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             {/* 페이지 타이틀 */}
-            <div className="flex items-center justify-between mb-2">
-              <h1 className="text-lg font-bold text-dark-50">내 자산</h1>
-              <div className="flex items-center gap-1">
-                <span className="text-xl">{mbtiProfile.emoji}</span>
-                <span className="text-primary-600 font-bold">{mbti}</span>
-              </div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-secondary-500 text-sm">내 자산</span>
+              <div className="flex items-center gap-2">
+                 <button 
+                   onClick={handleRoast} 
+                   className="text-xs font-bold text-primary-600 bg-primary-50 px-2.5 py-1.5 rounded-lg hover:bg-primary-100 transition-colors"
+                 >
+                   🩺 팩폭진단
+                 </button>
+                 <span className="font-bold text-secondary-900">{mbti}</span>
+               </div>
             </div>
 
-            {/* 자산 등 리뉴얼 레이아웃 */}
-            <div className="flex gap-2 mb-4 h-32">
-              {/* 좌측: 총 자산 & 차트 (가로 배치) */}
-              <Card
-                variant="glass"
-                className="flex-[1.6] relative overflow-hidden flex flex-row items-center p-3 gap-3"
-              >
-                <div
-                  className="absolute inset-0 opacity-15"
-                  style={{
-                    background: `linear-gradient(135deg, ${mbtiProfile.gradient[0]} 0%, ${mbtiProfile.gradient[1]} 100%)`,
-                  }}
-                />
+            {/* Hero 금액 */}
+            <div className="text-center mb-1">
+              <span className="text-4xl font-black text-secondary-900 tracking-tight">
+                {formatCurrency(totals.total)}
+              </span>
+            </div>
+            
+            {/* 변동 */}
+            <div className={cn(
+              "text-center text-base font-bold mb-4",
+              totals.profit >= 0 ? "text-success" : "text-error"
+            )}>
+              {totals.profit >= 0 ? '+' : ''}
+              {formatCurrency(totals.profit)} ({formatPercent(totals.profitPercent)})
+            </div>
 
-                <div className="relative z-10 shrink-0 w-[86px] h-[86px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={[
-                          { name: '주식', value: totals.stocks },
-                          { name: '현금', value: totals.cash },
-                        ]}
-                        innerRadius={30}
-                        outerRadius={40}
-                        paddingAngle={5}
-                        dataKey="value"
-                        stroke="none"
-                      >
-                        <Cell fill={mbtiProfile.gradient[0]} />
-                        <Cell fill="#e2e8f0" />
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-[10px] font-black text-dark-50">{totals.stocksPercent}%</p>
+            {/* 현금/주식 배분 - 2분할 스타일 */}
+            <div className="flex border-y border-secondary-100 divide-x divide-secondary-100 mb-4 bg-gray-50/50">
+              {/* 현금 */}
+              <div className="flex-1 py-4 px-4">
+                <div className="flex justify-between items-center mb-1">
+                  <div className="flex items-center gap-1.5">
+                    <Wallet className="w-3.5 h-3.5 text-secondary-500" />
+                    <span className="text-sm text-secondary-500">현금</span>
                   </div>
+                  <span className="font-bold text-secondary-900">{formatCurrency(totals.cash)}</span>
                 </div>
-
-                <div className="relative z-10 flex flex-col justify-center min-w-0">
-                  <p className="text-dark-300 text-[10px] font-medium mb-0.5">총 자산</p>
-                  <p className="text-base font-bold text-dark-50 tracking-tight leading-tight mb-1 truncate">
-                    {formatCurrency(totals.total)}
-                  </p>
-                  <div
-                    className={cn(
-                      'inline-flex items-center gap-0.5 text-[10px] font-medium px-1.5 py-0.5 rounded bg-white/50 w-fit',
-                      totals.profit >= 0 ? 'text-accent-bull' : 'text-accent-bear'
-                    )}
-                  >
-                    {getChangeArrow(totals.profit)}
-                    {formatCurrency(Math.abs(totals.profit), { suffix: '' })}
-                    <span className="opacity-80">({formatPercent(totals.profitPercent)})</span>
-                  </div>
+                <div className="text-right">
+                  <span className="text-xs text-secondary-400">({100 - totals.stocksPercent}%)</span>
                 </div>
-              </Card>
+              </div>
 
-              {/* 우측: 현금/주식 분할 */}
-              <div className="flex-1 flex flex-col gap-2">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex-1 bg-white rounded-xl px-3 py-2 border border-dark-600 shadow-sm flex flex-col justify-between min-w-0"
-                >
-                  <div className="flex justify-between items-start">
-                    <div className="flex items-center gap-1">
-                      <span className="text-sm">💵</span>
-                      <span className="text-dark-300 text-[10px] font-medium">현금 자산</span>
-                    </div>
-                    <span className="text-dark-400 text-[9px] bg-secondary-50 px-1.5 py-0.5 rounded">
-                      {100 - totals.stocksPercent}%
-                    </span>
+              {/* 주식 */}
+              <div className="flex-1 py-4 px-4">
+                <div className="flex justify-between items-center mb-1">
+                  <div className="flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-secondary-500" />
+                    <span className="text-sm text-secondary-500">주식</span>
                   </div>
-                  <p className="text-dark-50 font-bold text-xs truncate text-right mt-1">
-                    {formatCurrency(totals.cash)}
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex-1 bg-white rounded-xl px-3 py-2 border border-dark-600 shadow-sm flex flex-col justify-between min-w-0"
-                >
-                  <div className="flex justify-between items-start">
-                    <div className="flex items-center gap-1">
-                      <span className="text-sm">📈</span>
-                      <span className="text-dark-300 text-[10px] font-medium">주식 자산</span>
-                    </div>
-                    <span className="text-dark-400 text-[9px] bg-secondary-50 px-1.5 py-0.5 rounded">
-                      {totals.stocksPercent}%
-                    </span>
-                  </div>
-                  <p className="text-dark-50 font-bold text-xs truncate text-right mt-1">
-                    {formatCurrency(totals.stocks)}
-                  </p>
-                </motion.div>
+                  <span className="font-bold text-secondary-900">{formatCurrency(totals.stocks)}</span>
+                </div>
+                <div className="text-right">
+                  <span className="text-xs text-secondary-400">({totals.stocksPercent}%)</span>
+                </div>
               </div>
             </div>
 
             {/* 탭 네비게이션 */}
-            <div className="flex gap-1 mb-2 bg-secondary-100 rounded-xl border border-dark-600/50">
-              {(
-                [
-                  { id: 'overview', label: '보유 종목' },
-                  { id: 'history', label: '거래 내역' },
-                ] as const
-              ).map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    'flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all',
-                    activeTab === tab.id
-                      ? 'bg-white text-dark-50 shadow-sm font-bold'
-                      : 'text-dark-300 hover:text-dark-50'
-                  )}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="flex border-b border-secondary-100">
+              <button
+                onClick={() => setActiveTab('overview')}
+                className={cn(
+                  'flex-1 py-3 text-sm font-medium transition-colors border-b-2 -mb-px flex items-center justify-center gap-1.5',
+                  activeTab === 'overview'
+                    ? 'text-secondary-900 font-bold border-secondary-900'
+                    : 'text-secondary-400 border-transparent hover:text-secondary-600'
+                )}
+              >
+                <FolderOpen className="w-4 h-4" />
+                보유 종목
+              </button>
+              <button
+                onClick={() => setActiveTab('history')}
+                className={cn(
+                  'flex-1 py-3 text-sm font-medium transition-colors border-b-2 -mb-px flex items-center justify-center gap-1.5',
+                  activeTab === 'history'
+                    ? 'text-secondary-900 font-bold border-secondary-900'
+                    : 'text-secondary-400 border-transparent hover:text-secondary-600'
+                )}
+              >
+                <History className="w-4 h-4" />
+                거래 내역
+              </button>
             </div>
 
-            {/* 리스트 헤더 (보유 종목일 때만) */}
+            {/* 종목 수 & 정렬 */}
             {activeTab === 'overview' && (
-              <div className="flex justify-between items-center px-1 mb-2 mt-3 border-b border-dark-600 pb-2">
-                <h2 className="text-md font-bold text-dark-50 flex items-center gap-2">
-                  <span>📊</span> 보유 종목
-                  <span className="text-dark-300 text-xs bg-white px-2 py-0.5 rounded-full border border-dark-600 font-medium">
-                    {portfolioData.length}개
-                  </span>
-                </h2>
+              <div className="flex justify-between items-center py-3 text-xs text-secondary-500">
+                <span>{portfolioData.length}개 종목</span>
                 <SortDropdown value={sortBy} onChange={(val: any) => setSortBy(val)} />
               </div>
             )}
           </motion.div>
         </div>
 
-        {/* 2. 스크롤 영역 (리스트) */}
+        {/* 스크롤 영역 */}
         <div className="flex-1 overflow-hidden">
           <PullToRefreshWrapper onRefresh={handleRefresh}>
-            <div className="px-4 pb-4 pt-2">
+            <div className="px-4 pb-4">
               <AnimatePresence mode="wait">
                 {activeTab === 'overview' ? (
                   isLoading ? (
-                    <SkeletonList count={5} Component={PortfolioItemSkeleton} gap="space-y-2" />
+                    <SkeletonList count={5} Component={PortfolioItemSkeleton} gap="space-y-0" />
                   ) : (
                     <motion.div
                       key="overview"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="space-y-2"
                     >
                       {portfolioData.map(({ stock, shares, avgPrice }, index) => (
                         <motion.div
                           key={stock.ticker}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.05 }}
+                          transition={{ delay: index * 0.03 }}
                         >
                           <PortfolioItem
                             stock={stock}
@@ -371,7 +325,6 @@ export default function PortfolioPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="space-y-2"
                   >
                     {transactions.map((t: any) => (
                       <TransactionItem key={t.id} transaction={t} />
@@ -380,14 +333,15 @@ export default function PortfolioPage() {
                 ) : (
                   <motion.div
                     key="history-empty"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     className="text-center py-20"
                   >
-                    <div className="text-5xl mb-4 grayscale opacity-50">📝</div>
-                    <h3 className="text-dark-50 font-semibold mb-2">거래 내역</h3>
-                    <p className="text-dark-400 text-sm">
+                    <div className="w-16 h-16 bg-secondary-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <History className="w-8 h-8 text-secondary-300" />
+                    </div>
+                    <h3 className="text-secondary-900 font-semibold mb-2">거래 내역이 없어요</h3>
+                    <p className="text-secondary-400 text-sm">
                       아직 거래 내역이 없습니다.
                       <br />
                       종목을 매매해보세요!
@@ -402,12 +356,22 @@ export default function PortfolioPage() {
 
       <FooterNav />
 
-      {/* 종목 상세 모달 */}
-      <StockDetailModal
+      <StockDetailBottomSheet
         stock={selectedStock}
         mbti={mbti}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+      />
+
+      <ConfirmModal
+        isOpen={isRoastModalOpen}
+        onClose={() => setIsRoastModalOpen(false)}
+        onConfirm={() => setIsRoastModalOpen(false)}
+        title="투자 성향 진단서 🩺"
+        description={roastMessage}
+        icon={totals.profit >= 0 ? '🎉' : '🚑'}
+        confirmLabel="인정합니다"
+        cancelLabel="반박불가"
       />
     </div>
   )

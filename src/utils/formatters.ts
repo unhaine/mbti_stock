@@ -157,6 +157,14 @@ export function formatMarketCap(value: number | null | undefined): string {
   return formatCurrency(value, { compact: true })
 }
 
+// 일반 숫자 포맷 (1,000)
+export function formatNumber(
+  value: number | null | undefined
+): string {
+  if (value === null || value === undefined) return '-'
+  return new Intl.NumberFormat('ko-KR').format(value)
+}
+
 const formatters = {
   formatCurrency,
   formatChange,
@@ -165,6 +173,7 @@ const formatters = {
   formatRelativeTime,
   formatCompact,
   formatMarketCap,
+  formatNumber,
 }
 
 export default formatters

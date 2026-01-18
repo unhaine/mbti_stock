@@ -1,11 +1,41 @@
 import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from 'react'
 import { useAuth } from './AuthContext.tsx'
-import { supabase } from '../lib/supabaseClient'
 import useLocalStorage from '../hooks/useLocalStorage'
 import { KEYS } from '../utils/storage'
 import toast from 'react-hot-toast'
+import { logStockBuy, logStockSell } from '../services/analytics'
 
-import { Stock, Transaction, PortfolioStore } from '../types'
+import { Stock, Transaction, PortfolioStore, Portfolio } from '../types'
+
+// ... (interfaces remain same)
+
+// Supabase REST API Helper
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+const apiHeaders = {
+  'apikey': SUPABASE_KEY,
+  'Authorization': `Bearer ${SUPABASE_KEY}`,
+  'Content-Type': 'application/json',
+  'Prefer': 'return=representation' // 응답 받기 위해 설정
+}
+
+async function fetchRest(endpoint: string, options: RequestInit = {}) {
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, {
+    ...options,
+    headers: {
+      ...apiHeaders,
+      ...options.headers
+    }
+  })
+  
+  if (!response.ok) {
+    const errorBody = await response.text()
+    throw new Error(`API Error: ${response.status} ${response.statusText} - ${errorBody}`)
+  }
+  
+  return response.json()
+}
 
 interface LocalPortfolio {
   cash: number
@@ -21,20 +51,12 @@ interface LocalTransaction extends Transaction {
   id: string
 }
 
-interface Holding {
+export interface Holding {
   id: string
   portfolio_id: string
   ticker: string
   quantity: number
   avg_price: number
-  created_at: string
-}
-
-interface Portfolio {
-  id: string
-  user_id: string
-  cash_balance: number
-  total_assets: number
   created_at: string
 }
 
@@ -44,6 +66,7 @@ interface PortfolioContextType {
   buyStock: (stock: Stock, quantity: number, price: number) => Promise<boolean>
   sellStock: (stock: Stock, quantity: number, price: number) => Promise<boolean>
   transactions: Transaction[]
+  holdings: Holding[]
   isLoading: boolean
   refresh: () => Promise<void>
 }
@@ -67,6 +90,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     stocks: [],
   })
 
+  // ... (localTransactions state remains same)
   const [localTransactions, setLocalTransactions] = useLocalStorage<Transaction[]>(
     'mbti-stock-local-transactions',
     []
@@ -85,58 +109,41 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
 
     try {
       setIsLoading(true)
-      console.log('[Portfolio] Fetching data for user:', user.id)
+      console.log('[Portfolio] Fetching data for user (REST):', user.id)
 
       // 1. 포트폴리오 정보
-      let { data: pfData, error: pfError } = await supabase
-        .from('portfolios')
-        .select('*')
-        .eq('user_id', user.id)
-        .single()
-
-      if (pfError && pfError.code === 'PGRST116') {
+      let pfData: Portfolio
+      const portQuery = `portfolios?user_id=eq.${user.id}&select=*&limit=1`
+      const portfolios = await fetchRest(portQuery)
+      
+      if (portfolios.length === 0) {
         console.log('[Portfolio] No portfolio found, creating one...')
-        const { data: newPf, error: createError } = await supabase
-          .from('portfolios')
-          .insert({
+        const newPf = await fetchRest('portfolios', {
+          method: 'POST',
+          body: JSON.stringify({
             user_id: user.id,
             cash_balance: 10000000,
             total_assets: 10000000,
           })
-          .select()
-          .single()
-
-        if (createError) throw createError
-        pfData = newPf
-        pfError = null
-      } else if (pfError) {
-        throw pfError
+        })
+        pfData = newPf[0]
+      } else {
+        pfData = portfolios[0]
       }
 
       console.log('[Portfolio] Found portfolio:', pfData.id)
 
       // 2. 보유 종목
-      const { data: hData, error: hError } = await supabase
-        .from('holdings')
-        .select('*')
-        .eq('portfolio_id', pfData.id)
-
-      if (hError) throw hError
-
+      const hData = await fetchRest(`holdings?portfolio_id=eq.${pfData.id}&select=*`)
+      
       setPortfolio(pfData)
       setHoldings(hData || [])
 
       // 3. 거래 내역
-      const { data: tData, error: tError } = await supabase
-        .from('transactions')
-        .select('*')
-        .eq('portfolio_id', pfData.id)
-        .order('executed_at', { ascending: false })
-        .limit(20)
+      const tData = await fetchRest(`transactions?portfolio_id=eq.${pfData.id}&select=*&order=executed_at.desc&limit=20`)
+      setTransactions(tData || [])
 
-      if (!tError) setTransactions(tData || [])
-
-      // 4. 자동 마이그레이션 체크 (한 번만 실행되도록 체크)
+      // 4. 자동 마이그레이션 체크
       if (
         !migrationInProgress &&
         pfData.cash_balance === 10000000 &&
@@ -144,8 +151,6 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         (localPortfolio.cash !== 10000000 || localPortfolio.stocks.length > 0)
       ) {
         console.log('[Portfolio] Local data found. Migration condition met.')
-        // migrateLocalData를 여기서 직접 호출하는 대신 트리거만 설정할 수도 있지만
-        // 일단 순환 참조 방지를 위해 migrationInProgress 상우를 먼저 확인합니다.
       }
     } catch (error) {
       console.error('[Portfolio] Critical Error fetching portfolio:', error)
@@ -222,35 +227,150 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       setLocalTransactions([newTx, ...localTransactions])
 
       toast.success(`${quantity}주 매수 완료!`)
+      
+      // Analytics 로깅 (ML 학습 데이터 - 가장 강한 positive signal!)
+      logStockBuy({
+        userId: 'local',
+        mbti: 'INTJ', // TODO: Get from context
+        stockTicker: stock.ticker,
+        quantity,
+        price
+      }).catch(err => console.error('[Analytics] Failed to log buy:', err))
+      
       return true
     }
 
+    // PROVEN WORKING LOGIC: REST API
     try {
-      console.log('Starting buy_stock RPC:', { ticker: stock.ticker, quantity, price })
-      const { data, error } = await supabase.rpc('buy_stock', {
-        p_ticker: stock.ticker,
-        p_quantity: quantity,
-        p_price: price,
+      console.log('[BuyStock] Step 0: Starting (REST)...', { ticker: stock.ticker, quantity, price })
+      const totalCost = price * quantity
+
+      // 1. 내 포트폴리오 찾기
+      console.log('[BuyStock] Step 1: Finding user portfolio...')
+      const portfolios = await fetchRest(`portfolios?user_id=eq.${user.id}&select=id,cash_balance&limit=1`)
+      
+      if (portfolios.length === 0) throw new Error('포트폴리오를 찾을 수 없습니다.')
+      
+      const pf = portfolios[0]
+      const pfId = pf.id
+      const currentCash = pf.cash_balance
+
+      console.log(`[BuyStock] Portfolio Found: ${pfId}, Cash: ${currentCash}`)
+
+      if (currentCash < totalCost) throw new Error('Insufficient funds')
+
+      // 2. 잔액 차감
+      console.log('[BuyStock] Step 2: Deducting cash...')
+      await fetchRest(`portfolios?id=eq.${pfId}`, {
+         method: 'PATCH',
+         body: JSON.stringify({ cash_balance: currentCash - totalCost })
       })
 
-      if (error) {
-        console.error('RPC Error:', error)
-        throw error
+      // 3. 보유 주식 처리
+      console.log('[BuyStock] Step 3: Checking holdings...')
+      const holdingsData = await fetchRest(`holdings?portfolio_id=eq.${pfId}&ticker=eq.${stock.ticker}&select=*&limit=1`)
+      const holding = holdingsData.length > 0 ? holdingsData[0] : null
+      
+      if (holding) {
+        console.log('[BuyStock] Step 3-1: Updating existing holding...')
+        const newQuantity = holding.quantity + quantity
+        const newAvgPrice = ((holding.quantity * holding.avg_price) + totalCost) / newQuantity
+        
+        await fetchRest(`holdings?id=eq.${holding.id}`, {
+          method: 'PATCH',
+          body: JSON.stringify({
+             quantity: newQuantity,
+             avg_price: newAvgPrice
+          })
+        })
+      } else {
+        console.log('[BuyStock] Step 3-2: Creating new holding...')
+        await fetchRest('holdings', {
+          method: 'POST',
+          body: JSON.stringify({
+            portfolio_id: pfId,
+            ticker: stock.ticker,
+            quantity: quantity,
+            avg_price: price
+          })
+        })
       }
 
-      console.log('RPC Result:', data)
-      if (!data?.success) throw new Error(data?.error || '구매 처리 중 서버 오류가 발생했습니다.')
+      // 4. 거래 내역
+      console.log('[BuyStock] Step 4: Recording transaction...')
+      await fetchRest('transactions', {
+        method: 'POST',
+        body: JSON.stringify({
+          portfolio_id: pfId,
+          ticker: stock.ticker,
+          type: 'buy',
+          quantity: quantity,
+          price: price,
+          total_amount: totalCost,
+          executed_at: new Date().toISOString()
+        })
+      })
+      
+      console.log('[BuyStock] Success! Updating Local State & Refreshing UI...')
+      
+      // 1. 잔액(Portfolio) 상태 즉시 업데이트
+      if (portfolio) {
+        setPortfolio({
+          ...portfolio,
+          cash_balance: currentCash - totalCost
+        })
+      }
 
-      await fetchPortfolioData()
+      // 2. 보유 주식(Holdings) 상태 즉시 업데이트
+      const newHoldings = [...holdings]
+      const targetIndex = newHoldings.findIndex(h => h.ticker === stock.ticker)
+      
+      if (holding) {
+        // 기존 보유: 수량/평단가 갱신
+        if (targetIndex !== -1) {
+          const newQty = holding.quantity + quantity
+          const newAvg = ((holding.quantity * holding.avg_price) + totalCost) / newQty
+          
+          newHoldings[targetIndex] = {
+            ...newHoldings[targetIndex],
+            quantity: newQty,
+            avg_price: newAvg
+          }
+        }
+      } else {
+        // 신규 보유: 목록에 추가
+        newHoldings.push({
+          id: 'temp-' + Date.now(), // 임시 ID
+          portfolio_id: pfId,
+          ticker: stock.ticker,
+          quantity: quantity,
+          avg_price: price,
+          created_at: new Date().toISOString()
+        })
+      }
+      setHoldings(newHoldings)
+
+      // 3. 거래 내역(Transactions) 상태 즉시 업데이트
+      const newTransaction = {
+        id: 'temp-tx-' + Date.now(),
+        portfolio_id: pfId,
+        ticker: stock.ticker,
+        type: 'buy' as const,
+        quantity: quantity,
+        price: price,
+        total_amount: totalCost,
+        executed_at: new Date().toISOString()
+      }
+      setTransactions([newTransaction as Transaction, ...transactions])
+
+      // 4. 백그라운드 데이터 갱신
+      fetchPortfolioData().catch(e => console.warn('Background refresh failed:', e))
+      
       toast.success('매수가 체결되었습니다.')
       return true
     } catch (error: any) {
-      console.error('Buy error details:', error)
-      toast.error(
-        error.message === 'Insufficient funds'
-          ? '잔액이 부족합니다.'
-          : '매수 실패: ' + (error.message || '알 수 없는 오류')
-      )
+      console.error('[BuyStock] Error:', error)
+      toast.error('매수 실패: ' + (error.message || '알 수 없는 오류'))
       return false
     }
   }
@@ -296,22 +416,97 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     }
 
     try {
-      console.log('Starting sell_stock RPC:', { ticker: stock.ticker, quantity, price })
-      const { data, error } = await supabase.rpc('sell_stock', {
-        p_ticker: stock.ticker,
-        p_quantity: quantity,
-        p_price: price,
-      })
+      console.log('[SellStock] Starting (REST)...', { ticker: stock.ticker, quantity, price })
+      const totalRevenue = price * quantity
 
-      if (error) {
-        console.error('RPC Error:', error)
-        throw error
+      // 1. 포트폴리오 확인
+      const portfolios = await fetchRest(`portfolios?user_id=eq.${user.id}&select=id,cash_balance&limit=1`)
+      
+      if (portfolios.length === 0) throw new Error('포트폴리오를 찾을 수 없습니다.')
+      
+      const pf = portfolios[0]
+      const pfId = pf.id
+
+      // 2. 보유 주식 확인
+      const holdingsData = await fetchRest(`holdings?portfolio_id=eq.${pfId}&ticker=eq.${stock.ticker}&select=*&limit=1`)
+      const holding = holdingsData.length > 0 ? holdingsData[0] : null
+      
+      if (!holding || holding.quantity < quantity) {
+        throw new Error('보유 수량이 부족합니다.')
       }
 
-      console.log('RPC Result:', data)
-      if (!data?.success) throw new Error(data?.error || '판매 처리 중 서버 오류가 발생했습니다.')
+      // 3. 보유 수량 차감
+      if (holding.quantity === quantity) {
+        await fetchRest(`holdings?id=eq.${holding.id}`, { method: 'DELETE' })
+      } else {
+        await fetchRest(`holdings?id=eq.${holding.id}`, { 
+           method: 'PATCH',
+           body: JSON.stringify({ quantity: holding.quantity - quantity })
+        })
+      }
 
-      await fetchPortfolioData()
+      // 4. 현금 지급
+      await fetchRest(`portfolios?id=eq.${pfId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ cash_balance: pf.cash_balance + totalRevenue })
+      })
+
+      // 5. 거래 내역
+      await fetchRest('transactions', {
+        method: 'POST',
+        body: JSON.stringify({
+          portfolio_id: pfId,
+          ticker: stock.ticker,
+          type: 'sell',
+          quantity: quantity,
+          price: price,
+          total_amount: totalRevenue,
+          executed_at: new Date().toISOString()
+        })
+      })
+
+      console.log('[SellStock] Success! Updating Local State & Refreshing UI...')
+
+      // 1. 잔액 업데이트
+      if (portfolio) {
+        setPortfolio({
+          ...portfolio,
+          cash_balance: pf.cash_balance + totalRevenue
+        })
+      }
+
+      // 2. 보유 주식 업데이트
+      let updatedHoldings = [...holdings]
+      const holdIdx = updatedHoldings.findIndex(h => h.ticker === stock.ticker)
+      
+      if (holdIdx !== -1) {
+        if (holding.quantity === quantity) {
+          // 전량 매도 -> 삭제
+          updatedHoldings.splice(holdIdx, 1)
+        } else {
+          // 부분 매도 -> 수량 차감
+          updatedHoldings[holdIdx] = {
+            ...updatedHoldings[holdIdx],
+            quantity: holding.quantity - quantity
+          }
+        }
+        setHoldings(updatedHoldings)
+      }
+
+      // 3. 거래 내역 업데이트
+      const newTx = {
+        id: 'temp-tx-' + Date.now(),
+        portfolio_id: pfId,
+        ticker: stock.ticker,
+        type: 'sell' as const,
+        quantity: quantity,
+        price: price,
+        total_amount: totalRevenue,
+        executed_at: new Date().toISOString()
+      }
+      setTransactions([newTx as Transaction, ...transactions])
+
+      fetchPortfolioData().catch(e => console.warn('Background refresh failed:', e))
       toast.success('매도가 체결되었습니다.')
       return true
     } catch (error: any) {
@@ -339,12 +534,10 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         toast.loading('로컬 데이터를 서버와 동기화하고 있습니다...', { id: 'migration' })
 
         // 1. 캐시 동기화
-        const { error: pfError } = await supabase
-          .from('portfolios')
-          .update({ cash_balance: localPortfolio.cash })
-          .eq('id', targetPortfolioId)
-
-        if (pfError) throw pfError
+        await fetchRest(`portfolios?id=eq.${targetPortfolioId}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ cash_balance: localPortfolio.cash })
+        })
 
         // 2. 주식 보유 현황 동기화
         if (localPortfolio.stocks.length > 0) {
@@ -355,12 +548,14 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
             avg_price: s.avgPrice,
           }))
 
-          const { error: hError } = await supabase.from('holdings').insert(holdingsToInsert)
-          if (hError) throw hError
+          await fetchRest('holdings', {
+            method: 'POST',
+            body: JSON.stringify(holdingsToInsert) // Supabase REST API supports batch insert
+          })
         }
 
         toast.success('로컬 데이터가 계정과 동기화되었습니다!', { id: 'migration' })
-
+        
         // 마이그레이션이 끝났으면 로컬 데이터 초기화 (선택 사항)
         // setLocalPortfolio({ cash: 10000000, stocks: [] });
 
@@ -395,6 +590,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     buyStock,
     sellStock,
     transactions: user ? transactions : localTransactions,
+    holdings,
     isLoading,
     refresh: fetchPortfolioData,
   }

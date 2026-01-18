@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supabase 연결 테스트</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 5px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-left: 4px solid #4CAF50;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 12px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .error {
+      border-left-color: #f44336;
+      background: #ffebee;
+    }
+    .loading {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Supabase 연결 테스트</h1>
+    <p>이 페이지는 Supabase에서 데이터를 직접 가져와서 표시합니다.</p>
+    
+    <button onclick="testSupabase()">Supabase JS 클라이언트 테스트</button>
+    <button onclick="testRestAPI()">REST API 직접 테스트</button>
+    <button onclick="clearResult()">결과 지우기</button>
+    
+    <div id="result"></div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+    
+    const supabaseUrl = 'https://pwkhgxefvkwwvpmsurgt.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3a2hneGVmdmt3d3ZwbXN1cmd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg1MjU0MTIsImV4cCI6MjA4NDEwMTQxMn0.jz6oRQ9YuM6uW_7pO6i-4aF7j-pGIObf3Rjv22S3AYw'
+    
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    
+    window.testSupabase = async function() {
+      const resultDiv = document.getElementById('result')
+      resultDiv.className = 'loading'
+      resultDiv.textContent = '⏳ 데이터를 가져오는 중...\n'
+      
+      try {
+        console.log('🚀 Supabase 테스트 시작...')
+        
+        // 1. 삼성전자만 가져오기
+        resultDiv.textContent += '\n📥 삼성전자 데이터 조회 중...\n'
+        const { data: samsung, error: samsungError } = await supabase
+          .from('stocks')
+          .select('*')
+          .eq('ticker', '005930')
+          .single()
+        
+        if (samsungError) {
+          throw new Error(`삼성전자 조회 실패: ${samsungError.message}`)
+        }
+        
+        resultDiv.textContent += '\n✅ 삼성전자 데이터:\n'
+        resultDiv.textContent += JSON.stringify(samsung, null, 2)
+        resultDiv.textContent += '\n\n📊 주요 정보:\n'
+        resultDiv.textContent += `  - 이름: ${samsung.name}\n`
+        resultDiv.textContent += `  - 티커: ${samsung.ticker}\n`
+        resultDiv.textContent += `  - 기본 가격: ${samsung.price}원\n`
+        resultDiv.textContent += `  - 실시간 가격: ${samsung.livePrice}원\n`
+        resultDiv.textContent += `  - 실시간 데이터 여부: ${samsung.isLiveData}\n`
+        resultDiv.textContent += `  - 표시될 가격: ${samsung.livePrice || samsung.price}원\n`
+        
+        // 2. 전체 종목 개수 확인
+        resultDiv.textContent += '\n\n📥 전체 종목 개수 조회 중...\n'
+        const { count, error: countError } = await supabase
+          .from('stocks')
+          .select('*', { count: 'exact', head: true })
+        
+        if (countError) {
+          throw new Error(`종목 개수 조회 실패: ${countError.message}`)
+        }
+        
+        resultDiv.textContent += `✅ 전체 종목 개수: ${count}개\n`
+        
+        // 3. 실시간 데이터가 있는 종목 개수
+        const { data: liveStocks, error: liveError } = await supabase
+          .from('stocks')
+          .select('ticker, name, livePrice, isLiveData')
+          .eq('isLiveData', true)
+        
+        if (liveError) {
+          throw new Error(`실시간 데이터 조회 실패: ${liveError.message}`)
+        }
+        
+        resultDiv.textContent += `✅ 실시간 데이터 종목: ${liveStocks.length}개\n`
+        
+        resultDiv.className = ''
+        console.log('✅ 테스트 완료!')
+        
+      } catch (error) {
+        resultDiv.className = 'error'
+        resultDiv.textContent += `\n\n❌ 에러 발생:\n${error.message}\n\n`
+        resultDiv.textContent += `Stack:\n${error.stack}`
+        console.error('❌ 테스트 실패:', error)
+      }
+    }
+    
+    window.testRestAPI = async function() {
+      const resultDiv = document.getElementById('result')
+      resultDiv.className = 'loading'
+      resultDiv.textContent = '⏳ REST API로 데이터를 가져오는 중...\n'
+      
+      try {
+        console.log('🚀 REST API 테스트 시작...')
+        
+        const supabaseUrl = 'https://pwkhgxefvkwwvpmsurgt.supabase.co'
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3a2hneGVmdmt3d3ZwbXN1cmd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg1MjU0MTIsImV4cCI6MjA4NDEwMTQxMn0.jz6oRQ9YuM6uW_7pO6i-4aF7j-pGIObf3Rjv22S3AYw'
+        
+        // 1. 삼성전자 데이터 가져오기
+        resultDiv.textContent += '\n📥 삼성전자 데이터 조회 중 (REST API)...\n'
+        
+        const response = await fetch(`${supabaseUrl}/rest/v1/stocks?ticker=eq.005930`, {
+          headers: {
+            'apikey': supabaseKey,
+            'Authorization': `Bearer ${supabaseKey}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=representation'
+          }
+        })
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+        }
+        
+        const data = await response.json()
+        
+        if (!data || data.length === 0) {
+          throw new Error('삼성전자 데이터를 찾을 수 없습니다')
+        }
+        
+        const samsung = data[0]
+        
+        resultDiv.textContent += '\n✅ 삼성전자 데이터 (REST API):\n'
+        resultDiv.textContent += JSON.stringify(samsung, null, 2)
+        resultDiv.textContent += '\n\n📊 주요 정보:\n'
+        resultDiv.textContent += `  - 이름: ${samsung.name}\n`
+        resultDiv.textContent += `  - 티커: ${samsung.ticker}\n`
+        resultDiv.textContent += `  - 기본 가격: ${samsung.price}원\n`
+        resultDiv.textContent += `  - 실시간 가격: ${samsung.livePrice}원\n`
+        resultDiv.textContent += `  - 실시간 데이터 여부: ${samsung.isLiveData}\n`
+        resultDiv.textContent += `  - 표시될 가격: ${samsung.livePrice || samsung.price}원\n`
+        
+        // 2. 전체 종목 개수
+        resultDiv.textContent += '\n\n📥 전체 종목 개수 조회 중...\n'
+        
+        const countResponse = await fetch(`${supabaseUrl}/rest/v1/stocks?select=count`, {
+          headers: {
+            'apikey': supabaseKey,
+            'Authorization': `Bearer ${supabaseKey}`,
+            'Prefer': 'count=exact'
+          }
+        })
+        
+        const countHeader = countResponse.headers.get('content-range')
+        const count = countHeader ? countHeader.split('/')[1] : 'unknown'
+        
+        resultDiv.textContent += `✅ 전체 종목 개수: ${count}개\n`
+        
+        resultDiv.className = ''
+        console.log('✅ REST API 테스트 완료!')
+        
+      } catch (error) {
+        resultDiv.className = 'error'
+        resultDiv.textContent += `\n\n❌ 에러 발생:\n${error.message}\n\n`
+        resultDiv.textContent += `Stack:\n${error.stack}`
+        console.error('❌ REST API 테스트 실패:', error)
+      }
+    }
+    
+    window.clearResult = function() {
+      document.getElementById('result').textContent = ''
+      document.getElementById('result').className = ''
+    }
+    
+    // 페이지 로드 시 자동 실행
+    window.addEventListener('load', () => {
+      console.log('페이지 로드 완료. 테스트 버튼을 클릭하세요.')
+    })
+  </script>
+</body>
+</html>

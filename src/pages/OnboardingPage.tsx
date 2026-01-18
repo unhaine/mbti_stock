@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
 import { useMBTI } from '../hooks'
-import { MBTI_EMOJI, MBTI_DESC, MBTI_GROUPS_DISPLAY } from '../constants/mbti'
+import { MBTI_DESC, MBTI_GROUPS_DISPLAY } from '../constants/mbti'
 import { cn } from '../utils/helpers'
-import Button from '../components/common/Button'
+import mbtiProfiles from '../data/mbti-profiles.json'
 
 export default function OnboardingPage() {
   const navigate = useNavigate()
@@ -18,95 +17,130 @@ export default function OnboardingPage() {
 
   const handleConfirm = () => {
     if (!selectedMBTI) return
-
     setMBTI(selectedMBTI)
     navigate('/loading')
   }
 
+  // 진행률 계산 (1/3)
+  const progress = selectedMBTI ? 100 : 33
+
   return (
-    <div className="min-h-screen flex flex-col bg-dark-900">
+    <div className="min-h-screen flex flex-col bg-white">
       {/* 헤더 */}
-      <header className="py-6 px-6">
+      <header className="shrink-0 h-12 px-4 flex items-center justify-between border-b border-secondary-100">
         <button
           onClick={() => navigate('/')}
-          className="text-dark-200 hover:text-dark-50 transition-colors"
+          className="text-secondary-500 text-sm hover:text-secondary-900 transition-colors"
         >
           ← 돌아가기
+        </button>
+        <button
+          onClick={() => navigate('/main')}
+          className="text-secondary-400 text-sm hover:text-secondary-600 transition-colors"
+        >
+          건너뛰기
         </button>
       </header>
 
       {/* 메인 */}
-      <main className="flex-1 px-6 pb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="max-w-lg mx-auto"
-        >
-          <h1 className="text-xl font-bold text-dark-50 mb-1">당신의 MBTI를 선택하세요</h1>
-          <p className="text-dark-200 text-sm mb-6">
-            성격 유형에 맞는 투자 스타일을 분석해드릴게요
-          </p>
+      <main className="flex-1 px-4 pb-24 overflow-y-auto">
+        <div className="max-w-md mx-auto pt-6">
+          {/* Progress */}
+          <div className="mb-6">
+            <p className="text-secondary-400 text-xs mb-2">Step 1 of 1</p>
+            <div className="h-1 bg-secondary-100 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-secondary-900 rounded-full"
+                initial={{ width: '33%' }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+          </div>
 
-          {/* MBTI 그룹별 표시 */}
+          {/* 타이틀 */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8"
+          >
+            <h1 className="text-xl font-bold text-secondary-900 mb-2">
+              당신의 MBTI를 선택하세요
+            </h1>
+            <p className="text-secondary-500 text-sm">
+              성격 유형에 맞는 투자 스타일을 분석해드릴게요
+            </p>
+          </motion.div>
+
+          {/* MBTI 선택 - Flat Style with 구분선 */}
           <div className="space-y-6">
             {MBTI_GROUPS_DISPLAY.map((group) => (
               <div key={group.name}>
-                <h2 className="text-dark-200 text-sm font-medium mb-3 flex items-center gap-2">
-                  <span className={`w-2 h-2 rounded-full bg-linear-to-r ${group.color}`} />
+                {/* 그룹 타이틀 */}
+                <h2 className="text-xs font-bold text-secondary-400 uppercase tracking-wider mb-3">
                   {group.name}
                 </h2>
-                <div className="grid grid-cols-4 gap-2">
-                  {group.types.map((type) => (
-                    <motion.button
-                      key={type}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => handleSelect(type)}
-                      className={cn(
-                        'relative flex flex-col items-center py-2 px-1 rounded-lg border transition-all',
-                        selectedMBTI === type
-                          ? 'border-primary-500 bg-primary-500/15 shadow-glow'
-                          : 'border-dark-600 bg-white hover:border-primary-200 hover:bg-secondary-50'
-                      )}
-                    >
-                      {selectedMBTI === type && (
-                        <div className="absolute top-1.5 right-1.5 text-primary-400 bg-white rounded-full p-0.5">
-                          <Check className="w-3 h-3" strokeWidth={3} />
+                
+                {/* MBTI 리스트 */}
+                <div className="divide-y divide-secondary-100">
+                  {group.types.map((type) => {
+                    const profile = mbtiProfiles.find((p) => p.id === type)
+                    return (
+                      <button
+                        key={type}
+                        onClick={() => handleSelect(type)}
+                        className={cn(
+                          'w-full py-4 flex items-center justify-between transition-colors',
+                          selectedMBTI === type
+                            ? 'bg-secondary-50 border-l-2 border-l-secondary-900 -ml-4 pl-4 pr-0'
+                            : 'hover:bg-secondary-50'
+                        )}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="text-2xl w-8 text-center">{profile?.emoji}</div>
+                          <div className="text-left">
+                            <span className={cn(
+                              'font-bold text-base block',
+                              selectedMBTI === type ? 'text-secondary-900' : 'text-secondary-700'
+                            )}>
+                              {type}
+                            </span>
+                            <span className={cn(
+                              'text-sm block',
+                              selectedMBTI === type ? 'text-secondary-700' : 'text-secondary-400'
+                            )}>
+                              {(MBTI_DESC as any)[type]}
+                            </span>
+                          </div>
                         </div>
-                      )}
-                      <span className="text-xl mb-0.5">{(MBTI_EMOJI as any)[type]}</span>
-                      <span
-                        className={cn(
-                          'font-bold text-xs',
-                          selectedMBTI === type ? 'text-dark-50' : 'text-dark-200'
+                        {selectedMBTI === type && (
+                          <div className="w-2 h-2 rounded-full bg-secondary-900" />
                         )}
-                      >
-                        {type}
-                      </span>
-                      <span
-                        className={cn(
-                          'text-[10px] mt-0.5',
-                          selectedMBTI === type ? 'text-primary-600' : 'text-dark-300'
-                        )}
-                      >
-                        {(MBTI_DESC as any)[type]}
-                      </span>
-                    </motion.button>
-                  ))}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </main>
 
-      {/* 하단 고정 버튼 */}
-      <div className="fixed bottom-0 left-0 right-0 p-6 bg-linear-to-t from-dark-900 via-dark-900 to-transparent">
-        <div className="max-w-lg mx-auto">
-          <Button size="lg" fullWidth disabled={!selectedMBTI} onClick={handleConfirm}>
-            {selectedMBTI
-              ? `${(MBTI_EMOJI as any)[selectedMBTI]} ${selectedMBTI}로 분석 시작`
-              : 'MBTI를 선택해주세요'}
-          </Button>
+      {/* 하단 고정 CTA */}
+      <div className="shrink-0 px-4 pb-6 pt-4 bg-white border-t border-secondary-100">
+        <div className="max-w-md mx-auto">
+          <button
+            disabled={!selectedMBTI}
+            onClick={handleConfirm}
+            className={cn(
+              'w-full h-12 rounded-xl font-bold transition-all duration-200',
+              selectedMBTI
+                ? 'bg-primary-500 text-white hover:bg-primary-600 active:scale-[0.98]'
+                : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
+            )}
+          >
+            {selectedMBTI ? `${selectedMBTI}로 분석 시작` : 'MBTI를 선택해주세요'}
+          </button>
         </div>
       </div>
     </div>

@@ -1,19 +1,19 @@
-import { useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '../contexts/AuthContext.tsx'
-import FloatingParticles from '../components/effects/FloatingParticles'
+import { cn } from '../utils/helpers'
 import HeroSection from './landing/HeroSection'
 import FeatureSection from './landing/FeatureSection'
 import PreviewSection from './landing/PreviewSection'
 import DifferentiationSection from './landing/DifferentiationSection'
+import SignupCTASection from './landing/SignupCTASection'
 
 export default function LandingPage() {
   const { user, loading } = useAuth()
   const navigate = useNavigate()
-  const containerRef = useRef<HTMLDivElement>(null)
-  const featuresRef = useRef<HTMLDivElement>(null)
-  const previewRef = useRef<HTMLDivElement>(null)
-  const diffRef = useRef<HTMLDivElement>(null)
+  const [onboardingStarted, setOnboardingStarted] = useState(false)
+  const [activeSlide, setActiveSlide] = useState(0)
 
   useEffect(() => {
     if (!loading && user) {
@@ -23,49 +23,89 @@ export default function LandingPage() {
 
   if (loading) return null
 
-  const scrollToFeatures = () => featuresRef.current?.scrollIntoView({ behavior: 'smooth' })
-  const scrollToPreview = () => previewRef.current?.scrollIntoView({ behavior: 'smooth' })
-  const scrollToDiff = () => diffRef.current?.scrollIntoView({ behavior: 'smooth' })
+  const handleNext = () => {
+    if (activeSlide < 3) {
+      setActiveSlide(activeSlide + 1)
+    }
+  }
 
+  const handlePrev = () => {
+    if (activeSlide > 0) {
+      setActiveSlide(activeSlide - 1)
+    }
+  }
+
+  // 온보딩 단계들 (Hero 제외)
+  const onboardingSlides = [
+    <FeatureSection />,
+    <PreviewSection />,
+    <DifferentiationSection />,
+    <SignupCTASection />
+  ]
+
+  // 1. 시작 화면 (Hero)
+  if (!onboardingStarted) {
+    return (
+      <HeroSection onScrollDown={() => setOnboardingStarted(true)} />
+    )
+  }
+
+  const isLastSlide = activeSlide === onboardingSlides.length - 1
+
+  // 2. 온보딩 캐로셀 화면
   return (
-    <div
-      ref={containerRef}
-      className="h-screen bg-white overflow-y-auto snap-y snap-proximity scroll-smooth overflow-x-hidden selection:bg-primary-100 selection:text-primary-600"
-    >
-      {/* 프리미엄 배경 레이어 */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <FloatingParticles />
-        {/* 블러 레이어들 - 더 부드럽고 몽환적으로 조정 */}
-        <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-primary-200/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute top-[40%] left-[-20%] w-[60vw] h-[60vw] bg-secondary-200/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[-10%] right-[10%] w-[40vw] h-[40vw] bg-primary-100/15 rounded-full blur-[100px]" />
-
-        {/* 미세한 그리드 패턴 (선택사항 - 더 깨끗한 느낌을 위해 얇은 라인 추가) */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'radial-gradient(#000 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-          }}
-        />
+    <div className="h-screen bg-white overflow-hidden flex flex-col relative">
+      <div className="flex-1 relative">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSlide}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(_, info) => {
+              if (info.offset.x < -100) handleNext()
+              else if (info.offset.x > 100) handlePrev()
+            }}
+            className="absolute inset-0 touch-none"
+          >
+            {onboardingSlides[activeSlide]}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      <div className="relative z-10">
-        <HeroSection onScrollDown={scrollToFeatures} />
-        <FeatureSection ref={featuresRef} onScrollDown={scrollToPreview} />
-        <PreviewSection ref={previewRef} onScrollDown={scrollToDiff} />
-        <DifferentiationSection ref={diffRef} />
+      {/* 고정 하단 버튼 영역 */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-white via-white/90 to-transparent pt-12">
+        <div className="max-w-md mx-auto space-y-6">
+          <motion.button
+            whileTap={{ scale: 0.98 }}
+            onClick={() => isLastSlide ? navigate('/signup') : handleNext()}
+            className={cn(
+              "w-full h-14 rounded-2xl font-black text-lg transition-all duration-300 shadow-lg",
+              isLastSlide 
+                ? "bg-primary-500 text-white shadow-primary-200" 
+                : "bg-secondary-900 text-white shadow-secondary-200"
+            )}
+          >
+            {isLastSlide ? "지금 가입하고 시작하기" : "다음"}
+          </motion.button>
 
-        {/* 푸터 - 더 깔끔하게 다듬기 */}
-        <footer className="py-16 text-center text-dark-300 text-sm snap-align-none bg-white">
-          <div className="max-w-md mx-auto px-6">
-            <div className="w-12 h-0.5 bg-dark-700/50 mx-auto mb-8" />
-            <p className="mb-3 font-medium text-dark-400">💡 엔터테인먼트 목적 · 투자 조언 아님</p>
-            <p className="opacity-60 text-[11px] uppercase tracking-widest font-bold">
-              © 2026 MBTI STOCK · ALL RIGHTS RESERVED
-            </p>
+          {/* 하단 점 인디케이터 */}
+          <div className="flex justify-center gap-2 pb-2">
+            {[0, 1, 2, 3].map((idx) => (
+              <div
+                key={idx}
+                className={cn(
+                  "w-1.5 h-1.5 rounded-full transition-all duration-300",
+                  idx === activeSlide ? "bg-secondary-900 scale-125" : "bg-secondary-200"
+                )}
+              />
+            ))}
           </div>
-        </footer>
+        </div>
       </div>
     </div>
   )

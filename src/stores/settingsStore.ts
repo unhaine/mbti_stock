@@ -6,10 +6,12 @@ interface SettingsState {
   darkMode: boolean
   soundEffects: boolean
   refreshInterval: number
+  aiEnabled: boolean
   setNotifications: (value: boolean) => void
   setDarkMode: (value: boolean) => void
   setSoundEffects: (value: boolean) => void
   setRefreshInterval: (value: number) => void
+  setAiEnabled: (value: boolean) => void
   resetSettings: () => void
 }
 
@@ -18,6 +20,7 @@ const initialSettings = {
   darkMode: true,
   soundEffects: true,
   refreshInterval: 30,
+  aiEnabled: false,
 }
 
 export const useSettingsStore = create<SettingsState>()(
@@ -28,6 +31,7 @@ export const useSettingsStore = create<SettingsState>()(
       setDarkMode: (value) => set({ darkMode: value }),
       setSoundEffects: (value) => set({ soundEffects: value }),
       setRefreshInterval: (value) => set({ refreshInterval: value }),
+      setAiEnabled: (value) => set({ aiEnabled: value }),
       resetSettings: () => set(initialSettings),
     }),
     {

@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion'
 import { Heart, MessageSquare } from 'lucide-react'
-import profilesData from '../../../data/mbti-profiles.json'
-
+import { cn } from '../../../utils/helpers'
 import { Post } from '../../../types'
 
 interface PostCardProps {
@@ -9,62 +7,50 @@ interface PostCardProps {
   onClick?: () => void
 }
 
+// MBTI 그룹 컬러
+const MBTI_GROUP_COLORS: Record<string, string> = {
+  // 분석가 (NT)
+  INTJ: 'text-indigo-600', INTP: 'text-indigo-600',
+  ENTJ: 'text-indigo-600', ENTP: 'text-indigo-600',
+  // 외교관 (NF)
+  INFJ: 'text-emerald-600', INFP: 'text-emerald-600',
+  ENFJ: 'text-emerald-600', ENFP: 'text-emerald-600',
+  // 관리자 (SJ)
+  ISTJ: 'text-blue-600', ISFJ: 'text-blue-600',
+  ESTJ: 'text-blue-600', ESFJ: 'text-blue-600',
+  // 탐험가 (SP)
+  ISTP: 'text-amber-600', ISFP: 'text-amber-600',
+  ESTP: 'text-amber-600', ESFP: 'text-amber-600',
+}
+
 /**
- * 게시글 카드 컴포넌트
+ * 게시글 카드 컴포넌트 - 플랫 스타일
  */
 export default function PostCard({ post, onClick }: PostCardProps) {
-  const profile = profilesData.find((p) => p.id === post.mbti)
+  const mbtiColor = MBTI_GROUP_COLORS[post.mbti] || 'text-secondary-600'
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.01, y: -2 }}
-      whileTap={{ scale: 0.99 }}
+    <div
       onClick={onClick}
-      className="bg-white rounded-xl p-3 cursor-pointer border border-dark-600 hover:border-dark-400 transition-all shadow-sm"
+      className="py-4 cursor-pointer hover:bg-secondary-50 transition-colors -mx-4 px-4"
     >
-      {/* 헤더 */}
-      <div className="flex items-start gap-3 mb-3">
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-lg"
-          style={{
-            background: profile
-              ? `linear-gradient(135deg, ${profile.gradient[0]}80, ${profile.gradient[1]}80)`
-              : 'linear-gradient(135deg, #6366f180, #8b5cf680)',
-          }}
-        >
-          {post.emoji}
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <span className="font-medium text-dark-50 text-sm">{post.author}</span>
-            <span
-              className="px-1 py-0.5 text-xs rounded-md text-dark-50 font-medium border border-dark-600/10"
-              style={{ backgroundColor: `${profile?.gradient[0]}60` || '#6366f160' }}
-            >
-              {post.mbti}
-            </span>
-            {post.isHot && (
-              <span className="px-1 py-0.5 text-xs rounded-md bg-red-500/20 text-red-400">
-                🔥 HOT
-              </span>
-            )}
-          </div>
-          <span className="text-dark-300 text-xs">{post.timeAgo}</span>
-        </div>
+      {/* 헤더: 작성자 + 시간 */}
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-sm text-secondary-700">{post.author}</span>
+        <span className={cn('text-sm font-bold', mbtiColor)}>{post.mbti}</span>
+        <span className="text-xs text-secondary-400">· {post.timeAgo}</span>
       </div>
 
-      {/* 본문 */}
+      {/* 본문: 제목 + 미리보기 */}
       <div className="mb-3">
-        <h3 className="text-dark-50 font-semibold mb-1 leading-snug">{post.title}</h3>
-        <p className="text-dark-300 text-sm line-clamp-2">{post.preview}</p>
+        <h3 className="font-bold text-secondary-900 mb-1 leading-snug">{post.title}</h3>
+        <p className="text-secondary-500 text-sm line-clamp-2">{post.preview}</p>
       </div>
 
-      {/* 카테고리 & 통계 */}
+      {/* 푸터: 카테고리 + 통계 */}
       <div className="flex items-center justify-between">
-        <span className="px-2 py-1 text-xs rounded-lg bg-secondary-100 text-dark-400 font-medium">
-          {post.category}
-        </span>
-        <div className="flex items-center gap-4 text-dark-500 text-sm">
+        <span className="text-xs text-secondary-400">{post.category}</span>
+        <div className="flex items-center gap-4 text-secondary-400 text-sm">
           <span className="flex items-center gap-1">
             <Heart className="w-4 h-4" />
             {post.likes}
@@ -75,6 +61,6 @@ export default function PostCard({ post, onClick }: PostCardProps) {
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

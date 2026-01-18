@@ -4,37 +4,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Kakao Brand Colors
+        // Primary - Red Theme (미니멀, 세련됨)
         primary: {
-          50: '#fffde7',
-          100: '#fff9c4',
-          200: '#fff59d',
-          300: '#fff176',
-          400: '#ffee58',
-          500: '#fee500', // Main Brand Color
-          600: '#fdd835',
-          700: '#fbc02d',
-          800: '#f9a825',
-          900: '#f57f17',
+          50: '#FEF2F2',   // 가장 밝은 빨간색 (호버 배경)
+          100: '#FEE2E2',  // 연한 빨간색 (선택 배경)
+          200: '#FECACA',  // 밝은 빨간색
+          300: '#FCA5A5',  // 중간 밝은 빨간색
+          400: '#F87171',  // 중간 빨간색
+          500: '#EF4444',  // 메인 브랜드 빨간색
+          600: '#DC2626',  // 진한 빨간색 (호버)
+          700: '#B91C1C',  // 더 진한 빨간색
+          800: '#991B1B',  // 매우 진한 빨간색
+          900: '#7F1D1D',  // 가장 진한 빨간색
         },
-        // Grayscale Colors
+        // Grayscale Colors (neutral)
         secondary: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#eeeeee',
-          300: '#e0e0e0',
-          400: '#bdbdbd',
-          500: '#9e9e9e',
-          600: '#757575',
-          700: '#616161',
-          800: '#424242',
-          900: '#212121',
+          50: '#F9FAFB',   // 2차 배경
+          100: '#F3F4F6',  // 구분선
+          200: '#E5E7EB',  // 호버 구분선
+          300: '#D1D5DB',
+          400: '#9CA3AF',  // 비활성 텍스트
+          500: '#6B7280',  // 2차 텍스트
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',  // 1차 텍스트
         },
         // Semantic Colors
-        background: '#f2f4f6',
-        surface: '#ffffff',
-        error: '#ef4444',
-        success: '#10b981',
+        background: '#FFFFFF',   // 흰색 배경
+        surface: '#FFFFFF',
+        error: '#DC2626',        // 하락/부정
+        success: '#16A34A',      // 상승/긍정
+        info: '#2563EB',         // 정보/링크
 
         // Legacy Dark Scale (Mapped to Light Theme)
         dark: {

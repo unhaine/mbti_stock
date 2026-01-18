@@ -1,242 +1,315 @@
-# MBTI 투자 캐릭터 생성기
+# MBTI Stock - MBTI 기반 AI 주식 추천 서비스
 
-> MBTI로 알아보는 나의 투자 성향 - 성격 유형 기반 맞춤형 주식 추천 서비스
+MBTI 성향에 맞는 주식을 AI가 추천해주는 웹 애플리케이션입니다.
 
-[![Status](https://img.shields.io/badge/status-planning-yellow)]()
-[![Progress](https://img.shields.io/badge/progress-60%25-blue)]()
+## 📋 목차
 
----
-
-## 🎯 프로젝트 개요
-
-MBTI 성격 유형을 투자 성향으로 재해석하여, 사용자에게 맞춤형 주식 테마와 종목을 추천하는 **엔터테인먼트 웹 서비스**입니다.
-
-### 핵심 특징
-
-- 🎭 **16개 MBTI 유형별** 투자 성향 분석
-- 🏰 **80개 맞춤 테마** (각 MBTI당 5개)
-- 💬 **144개 MBTI 코멘트** (상승/보합/하락장별)
-- 📱 **모바일 앱 스타일 UI** (스와이프 제스처)
-- 🎨 **은유 기반 설명** ("천천히 쌓이는 성", "로켓 발사" 등)
+- [시스템 구조](#시스템-구조)
+- [사전 준비](#사전-준비)
+- [환경 설정](#환경-설정)
+- [실행 방법](#실행-방법)
+- [데이터 업데이트](#데이터-업데이트)
+- [배포](#배포)
 
 ---
 
-## 📚 문서
-
-시작하기 전에 **[docs/00_START_HERE.md](./docs/00_START_HERE.md)**를 읽어주세요!
-
-### 주요 문서
-
-- [📖 서비스 개요](./docs/01_SERVICE_OVERVIEW.md) - 핵심 가치 제안, 타겟 사용자
-- [⚙️ 기능 명세](./docs/02_FEATURES.md) - 14개 기능 상세 설명
-- [💾 데이터 구조](./docs/03_DATABASE.md) - LocalStorage, JSON 스키마
-- [🎨 UI 구조](./docs/05_UI_STRUCTURE.md) - 컴포넌트, 와이어프레임
-- [🔧 기술 결정](./docs/99_DECISIONS.md) - 9개 주요 기술 선택 이유
-
-### 개선 및 고도화
-
-- [🚀 개선 전략 요약](./docs/개선_전략_요약.md) - 실행 가능한 개선 가이드 ⭐ NEW
-- [📋 상세 개선 전략](./docs/개선_및_고도화_전략.md) - 종합 개선 및 고도화 전략 ⭐ NEW
-- [📊 UI/UX 분석 보고서](./docs/보고서.md) - 현재 상태 평가 및 개선점
-
-### 프로젝트 관리
-
-- [📊 진행 상황](./PROGRESS.md) - 완료/진행/대기 작업
-- [📝 세션 기록](./SESSION_LOG.md) - AI 협업 세션 로그
-- [✅ TODO](./TODO.md) - 주차별 할 일 목록
-
----
-
-## 🚀 빠른 시작
-
-### 1. 프로젝트 셋업 (예정)
-
-```bash
-# 프로젝트 생성
-npm create vite@latest . -- --template react
-
-# 의존성 설치
-npm install
-npm install framer-motion react-router-dom
-npm install -D tailwindcss postcss autoprefixer
-
-# Tailwind 초기화
-npx tailwindcss init -p
-
-# 개발 서버 실행
-npm run dev
-```
-
-### 2. 디렉토리 구조
+## 🏗️ 시스템 구조
 
 ```
 mbti_stock/
-├── docs/                  # 📚 문서
-│   ├── 00_START_HERE.md
-│   ├── 01_SERVICE_OVERVIEW.md
-│   ├── 02_FEATURES.md
-│   ├── 03_DATABASE.md
-│   ├── 05_UI_STRUCTURE.md
-│   ├── 99_DECISIONS.md
-│   ├── plan/             # 상세 기획 문서
-│   ├── data/             # 데이터 문서 (MBTI, 테마, 코멘트)
-│   └── design/           # 와이어프레임
-│
-├── src/                  # 🚀 소스 코드 (예정)
-│   ├── components/
-│   ├── pages/
-│   ├── data/
-│   └── utils/
-│
-├── PROGRESS.md
-├── SESSION_LOG.md
-└── TODO.md
+├── src/                    # 프론트엔드 (React + TypeScript + Vite)
+├── backend/                # 백엔드 (FastAPI + Python)
+│   ├── main.py            # API 서버
+│   ├── ranker.py          # AI 추천 로직
+│   └── venv/              # Python 가상환경
+├── scripts/               # 유틸리티 스크립트
+│   ├── proxy-server.js    # CORS 프록시 서버
+│   └── update-stocks.js   # 주식 데이터 업데이트
+└── .env                   # 환경 변수 (중요!)
+```
+
+**3개의 서버가 동시에 실행되어야 합니다:**
+
+1. **프론트엔드 (Vite)**: `localhost:5173`
+2. **백엔드 (FastAPI)**: `localhost:8000`
+3. **프록시 서버 (Node.js)**: `localhost:3001`
+
+---
+
+## 🔧 사전 준비
+
+### 필수 설치
+
+- **Node.js** (v18 이상)
+- **Python** (v3.9 이상)
+- **npm** 또는 **yarn**
+
+### 필수 계정
+
+1. **Supabase** (https://supabase.com)
+   - 무료 프로젝트 생성
+   - `stocks` 테이블 및 `stock_prices_daily` 테이블 생성 필요
+2. **Google Gemini API** (https://ai.google.dev)
+   - API 키 발급 (무료 티어 사용 가능)
+3. **공공데이터포털 API** (https://www.data.go.kr)
+   - 금융위원회\_주식시세정보 API 신청
+   - 승인까지 1-2일 소요
+   - 주식 데이터 업데이트용 (필수)
+
+---
+
+## ⚙️ 환경 설정
+
+### 1. 환경 변수 파일 생성
+
+프로젝트 루트에 `.env` 파일을 생성하고 다음 내용을 입력하세요:
+
+```bash
+# Supabase
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+
+# Gemini AI
+VITE_GEMINI_API_KEY=your-gemini-api-key
+VITE_GEMINI_MODEL=gemini-1.5-flash
+
+# 공공데이터포털 (주식 데이터 업데이트용)
+VITE_DATA_GO_KR_API_KEY=your-data-go-kr-key
+VITE_DATA_GO_KR_STOCK_ENDPOINT=https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService
+```
+
+> ⚠️ **주의**: `.env` 파일은 절대 Git에 커밋하지 마세요!
+
+### 2. 의존성 설치
+
+#### 프론트엔드
+
+```bash
+npm install
+```
+
+#### 백엔드
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
 ---
 
-## 🛠️ 기술 스택
+## 🚀 실행 방법
 
-| 영역      | 기술            | 선택 이유             |
-| --------- | --------------- | --------------------- |
-| Frontend  | React 18 (Vite) | 빠른 HMR, 간단한 설정 |
-| Routing   | React Router v6 | SPA 표준 라우팅       |
-| Animation | Framer Motion   | 스와이프 제스처 지원  |
-| Styling   | Tailwind CSS    | 모바일 우선 반응형    |
-| State     | LocalStorage    | MVP 단계 간단한 저장  |
-| Deploy    | Vercel          | 무료, 자동 배포       |
+### 개발 환경 실행 (3개 터미널 필요)
 
-자세한 기술 결정 이유는 [99_DECISIONS.md](./docs/99_DECISIONS.md) 참조
+#### 터미널 1: 프론트엔드
 
----
-
-## 📱 화면 구성
-
-### 1. 랜딩페이지
-
-- Hero Section + CTA
-- 3가지 핵심 기능 소개
-- 예시 결과 미리보기
-
-### 2. 온보딩
-
-- MBTI 선택 (16개 버튼)
-- 로딩 화면 (3초)
-
-### 3. 메인페이지 ⭐
-
-- **가상 자산 카드** (MBTI 코멘트 포함)
-- **5개 테마 스와이프**
-- **테마별 10개 종목 리스트**
-- 종목 상세 모달
-
-### 4. 기타
-
-- 커뮤니티 (목업)
-- 자산현황 (목업)
-- 설정
-
-상세 와이어프레임은 [design/와이어프레임.md](./docs/design/와이어프레임.md) 참조
-
----
-
-## 📊 현재 진행 상황
-
-```
-████████████░░░░░░░░ 60%
+```bash
+npm run dev
 ```
 
-### ✅ 완료 (60%)
+→ http://localhost:5173 에서 접속
 
-- [x] 기획 문서 작성 (100%)
-- [x] 데이터 준비 (80%)
-  - [x] MBTI 리스트 (16개)
-  - [x] 투자 테마 (80개)
-  - [x] MBTI 코멘트 (144개)
-  - [x] 코스닥150 샘플 (50개)
-- [x] 디자인 (100%)
-  - [x] 와이어프레임 (8개 화면)
-  - [x] 컴포넌트 구조
-  - [x] 디자인 토큰
-- [x] 문서화 (100%)
+#### 터미널 2: 백엔드
 
-### 🚧 진행 중 (0%)
-
-- [ ] 프로젝트 셋업
-- [ ] JSON 데이터 파일 생성
-- [ ] 컴포넌트 개발
-
-### 📅 예상 완료일
-
-**2026-02-10** (MVP 배포)
-
----
-
-## 🎯 MVP 범위
-
-### ✅ Phase 1 (현재 목표)
-
-**UI/UX**: 모든 페이지 구조 완성  
-**기능**: 핵심 기능만 구현  
-**데이터**: 정적 JSON
-
-- 랜딩페이지
-- MBTI 선택 → 로딩 → 메인페이지
-- 가상 자산 + MBTI 코멘트
-- 5개 테마 스와이프
-- 테마별 10개 종목 리스트
-- 종목 상세 모달
-- 설정 페이지
-
-### ⏸️ Phase 2 (향후)
-
-- AI 캐릭터 생성 (LLM 연동)
-- 실시간 주가 데이터
-- 북마크 기능
-- 커뮤니티 실제 구현
-- 가상 포트폴리오 관리
-
----
-
-## 💡 차별화 포인트
-
-### 기존 서비스 vs 우리 서비스
-
-```
-기존 방식:
-"삼성전자는 PER 15배, PBR 1.2배입니다."
-
-우리 방식:
-"당신의 INTJ 성향에 맞는 '천천히 쌓이는 성' 같은 종목이에요.
-단기 변동에 흔들리지 않고 장기적으로 견고하게 성장하는 스타일입니다."
+```bash
+cd backend
+source venv/bin/activate
+uvicorn main:app --reload --port 8000
 ```
 
-### 주요 특징
+→ http://localhost:8000/docs 에서 API 문서 확인 가능
 
-1. **은유 기반 설명** - 숫자가 아닌 스토리로 전달
-2. **MBTI 성향 반영** - 같은 종목도 MBTI별로 다른 설명
-3. **모바일 앱 경험** - 스와이프, 애니메이션
-4. **재미 + 실용성** - 가상 자산 + 시장 코멘트
+#### 터미널 3: 프록시 서버
+
+```bash
+node scripts/proxy-server.js
+```
+
+→ CORS 우회용 프록시 (포트 3001)
+
+### 한 번에 실행하기 (선택사항)
+
+`package.json`에 스크립트를 추가하면 편리합니다:
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "backend": "cd backend && source venv/bin/activate && uvicorn main:app --reload --port 8000",
+    "proxy": "node scripts/proxy-server.js",
+    "start:all": "concurrently \"npm run dev\" \"npm run backend\" \"npm run proxy\""
+  }
+}
+```
+
+그 후:
+
+```bash
+npm install -D concurrently
+npm run start:all
+```
 
 ---
 
-## ⚠️ 면책 조항
+## 📊 데이터 업데이트
 
-> **본 서비스는 엔터테인먼트 목적으로 제공되며, 실제 투자 조언이나 금융 상담이 아닙니다.**  
-> 투자 결정은 본인의 책임 하에 이루어져야 합니다.
+### Supabase 테이블 구조
+
+#### 1. `stocks` 테이블 (종목 마스터)
+
+```sql
+CREATE TABLE stocks (
+  ticker TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  sector TEXT,
+  price NUMERIC,
+  change NUMERIC,
+  change_percent NUMERIC,
+  volume NUMERIC,
+  open_price NUMERIC,
+  high_price NUMERIC,
+  low_price NUMERIC,
+  volatility TEXT,
+  market_cap TEXT,
+  dividend_yield NUMERIC,
+  last_sync_date TEXT,
+  updated_at TIMESTAMP DEFAULT NOW()
+);
+```
+
+#### 2. `stock_prices_daily` 테이블 (일별 시세)
+
+```sql
+CREATE TABLE stock_prices_daily (
+  ticker TEXT NOT NULL,
+  trade_date DATE NOT NULL,
+  open_price NUMERIC,
+  high_price NUMERIC,
+  low_price NUMERIC,
+  close_price NUMERIC,
+  volume BIGINT,
+  change_amount NUMERIC,
+  change_percent NUMERIC,
+  PRIMARY KEY (ticker, trade_date)
+);
+```
+
+### 주식 데이터 업데이트 스크립트
+
+```bash
+# TypeScript 스크립트 실행
+npx tsx scripts/sync-daily-prices.ts
+```
+
+**자동화 (cron 설정 예시):**
+
+```bash
+# 매일 오후 6시에 실행 (장 마감 후)
+0 18 * * 1-5 cd /path/to/mbti_stock && npx tsx scripts/sync-daily-prices.ts
+```
+
+---
+
+## 🎯 주요 기능
+
+### 1. MBTI 기반 추천
+
+- 16가지 MBTI 유형별 맞춤 추천
+- 각 MBTI당 5개의 테마 제공
+- 테마당 10개 종목 추천
+
+### 2. AI 분석
+
+- **백엔드 AI (ranker.py)**:
+  - 섹터 매칭
+  - 배당 수익률
+  - 모멘텀 분석
+  - 변동성 평가
+- **Gemini AI**:
+  - 종목별 스토리텔링
+  - 테마 기반 설명 생성
+  - MBTI 맞춤 투자 조언
+
+### 3. 실시간 데이터
+
+- Supabase에서 주식 데이터 조회
+- 커뮤니티 게시글 실시간 동기화
+- 포트폴리오 관리
+
+---
+
+## 🐛 트러블슈팅
+
+### 문제: 프론트엔드가 백엔드에 연결 안 됨
+
+**해결**:
+
+1. 백엔드가 `localhost:8000`에서 실행 중인지 확인
+2. `.env` 파일의 Supabase 키 확인
+3. CORS 에러 시 프록시 서버 실행 확인
+
+### 문제: AI 추천이 로딩만 됨
+
+**해결**:
+
+1. 백엔드 터미널에서 에러 로그 확인
+2. `backend/test_api.py` 실행해서 API 테스트
+3. Supabase `stocks` 테이블에 데이터가 있는지 확인
+
+### 문제: Gemini API 할당량 초과
+
+**해결**:
+
+1. 설정에서 "AI 기능" 끄기
+2. 또는 Gemini API 키 재발급
+3. 캐시 클리어: `localStorage.clear()`
+
+---
+
+## 📦 배포
+
+### Vercel (프론트엔드)
+
+```bash
+npm run build
+vercel --prod
+```
+
+환경 변수 설정:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+- `VITE_GEMINI_API_KEY`
+
+### Railway/Render (백엔드)
+
+```bash
+cd backend
+# Procfile 생성
+echo "web: uvicorn main:app --host 0.0.0.0 --port \$PORT" > Procfile
+```
+
+환경 변수 설정:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
 
 ---
 
 ## 📝 라이선스
 
-조별과제 프로젝트 (교육 목적)
+MIT License
 
 ---
 
-## 👥 팀
+## 🤝 기여
 
-조별과제 프로젝트
+이슈와 PR은 언제나 환영합니다!
 
 ---
 
-_최종 업데이트: 2026-01-16_
+## 📧 문의
+
+문제가 있으시면 이슈를 등록해주세요.

@@ -1,4 +1,0 @@
-﻿src/pages/CommunityPage.tsx(50,34): error TS2352: Conversion of type 'import("C:/dev/mbti_stock/src/utils/postGenerator").Post[]' to type 'Post[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
-  Type 'import("C:/dev/mbti_stock/src/utils/postGenerator").Post' is not comparable to type 'Post'.
-    Types of property 'id' are incompatible.
-      Type 'number' is not comparable to type 'string'.
