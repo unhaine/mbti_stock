@@ -33,7 +33,7 @@ export function getStockDisplay(stock: Stock): StockDisplayModel {
     formattedChange: formatCurrency(Math.abs(change)), // 부호 없이 절대값만 포맷팅
     formattedChangePercent: formatPercent(changePercent),
     changeColorClass: getChangeColor(changePercent),
-    changeSymbol: changePercent > 0 ? '+' : '',
+    changeSymbol: '', // formatPercent에서 이미 부호를 처리하므로 중복 방지를 위해 공백 처리
     isLive
   };
 }

@@ -13,7 +13,7 @@ import StockOverviewTab from './stock-detail-tabs/StockOverviewTab'
 import StockFinancialsTab from './stock-detail-tabs/StockFinancialsTab'
 import StockCommunityTab from './stock-detail-tabs/StockCommunityTab'
 import { getOrGenerateUnifiedContent } from '../../../services/gemini'
-import { useSettings } from '../../../hooks'
+import { useSettings, useStockHistory } from '../../../hooks'
 import StockLogo from '../../ui/stock-logo'
 import { useCommunityPosts } from '../../../hooks/useCommunityPosts'
 
@@ -26,17 +26,24 @@ interface StockDetailBottomSheetProps {
 
 function generateChartData(basePrice: number, changePercent: number) {
   const data = []
-  let currentPrice = basePrice * (1 - (changePercent * 0.5) / 100)
+  const points = 100 // 데이터 포인트 증가 (30 -> 100)
+  let currentPrice = basePrice * (1 - (changePercent * 0.8) / 100)
 
-  for (let i = 0; i < 30; i++) {
-    const volatility = basePrice * 0.01
-    const change = (Math.random() - 0.5) * volatility
-    if (changePercent > 0) currentPrice += volatility * 0.2
-    else currentPrice -= volatility * 0.2
-    currentPrice += change
-    data.push({ price: Math.max(0, currentPrice) })
+  for (let i = 0; i < points; i++) {
+    // 서서히 목표가(basePrice)에 도달하도록 트렌드 부여
+    const trend = (basePrice - currentPrice) / (points - i)
+    const volatility = basePrice * 0.005 // 변동성 조절
+    const noise = (Math.random() - 0.5) * volatility
+    
+    currentPrice += trend + noise
+    data.push({ 
+      price: Math.max(0, currentPrice),
+      date: i // X축 인덱스
+    })
   }
-  data.push({ price: basePrice })
+  
+  // 마지막 데이터는 정확한 현재가로 설정
+  data[data.length - 1].price = basePrice
   return data
 }
 
@@ -67,10 +74,22 @@ export default function StockDetailBottomSheet({
   const displayPrice = display?.price ?? 0
   const displayChange = display?.changePercent ?? 0
 
+  // 실시간 히스토리 데이터 가져오기
+  const { history: realHistory } = useStockHistory(stock?.ticker)
+
   const chartData = useMemo(() => {
     if (!stock) return []
+    
+    // 실제 히스토리 데이터가 어느 정도 쌓여 있으면 우선적으로 사용 (현실감)
+    if (realHistory && realHistory.length > 5) {
+      // 차트가 좀 더 꽉 차 보이도록 데이터가 적으면 시뮬레이션과 섞거나 조절 가능
+      // 여기서는 실제 데이터 그대로 사용
+      return realHistory
+    }
+    
+    // 실제 데이터가 없거나 부족할 때만 시뮬레이션 데이터 생성
     return generateChartData(displayPrice, displayChange)
-  }, [stock?.ticker, displayPrice, displayChange])
+  }, [stock?.ticker, displayPrice, displayChange, realHistory])
 
   // ... (rest of the component logic)
 

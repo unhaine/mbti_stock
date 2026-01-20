@@ -45,7 +45,6 @@ export default function MainPage() {
   const [selectedTheme, setSelectedTheme] = useState(0)
   const [selectedStock, setSelectedStock] = useState<Stock | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [swipeDirection, setSwipeDirection] = useState(0)
   
   const { stocks: masterStocks, refresh: refreshStocks } = useStockContext()
   const [isLoading, setIsLoading] = useState(true)
@@ -245,20 +244,20 @@ export default function MainPage() {
 
   // 테마 선택 핸들러
   const handleThemeSelect = (index: number) => {
-    setSwipeDirection(index > selectedTheme ? 1 : -1)
     setSelectedTheme(index)
   }
 
-  // 스와이프 핸들러
+  // 스와이프 핸들러 (무한 로테이트 적용)
   const handleSwipe = (direction: 'left' | 'right') => {
-    if (direction === 'left') { // Next theme
-      if (selectedTheme < mbtiThemes.length - 1) {
-        handleThemeSelect(selectedTheme + 1)
-      }
-    } else { // Previous theme
-      if (selectedTheme > 0) {
-        handleThemeSelect(selectedTheme - 1)
-      }
+    const total = mbtiThemes.length
+    if (total <= 1) return
+
+    if (direction === 'left') { // 다음 테마 (왼쪽으로 스와이프)
+      const nextIndex = (selectedTheme + 1) % total
+      handleThemeSelect(nextIndex)
+    } else { // 이전 테마 (오른쪽으로 스와이프)
+      const prevIndex = (selectedTheme - 1 + total) % total
+      handleThemeSelect(prevIndex)
     }
   }
 
@@ -327,8 +326,6 @@ export default function MainPage() {
                 <StockListSection 
                   isLoading={isLoading}
                   onRefresh={handleRefresh}
-                  selectedTheme={selectedTheme}
-                  swipeDirection={swipeDirection}
                   themeStocks={themeStocks}
                   topStock={topStock}
                   mbti={mbti}

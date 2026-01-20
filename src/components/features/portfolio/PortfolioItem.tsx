@@ -57,7 +57,7 @@ export default function PortfolioItem({
           "text-sm font-bold",
           getChangeColor(profit)
         )}>
-          {profit >= 0 ? '+' : ''}{formatPercent(profitPercent)}
+          {formatPercent(profitPercent)}
         </p>
       </div>
     </motion.div>

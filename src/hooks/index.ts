@@ -8,6 +8,7 @@ export { default as useFinancialData } from './useFinancialData'
 export * from './useStockDisplay'
 export * from './useGamification'
 export * from './useSearchStocks'
+export * from './useStockHistory'
 
 export { useStockData as useStockDataHook } from './useStockData'
 export { useStockSubscription as useStockSubscriptionHook } from './useStockSubscription'

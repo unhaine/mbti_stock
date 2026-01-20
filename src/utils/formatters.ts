@@ -57,7 +57,7 @@ export function formatPercent(
 
   if (value === null || value === undefined) return '-'
 
-  const sign = showSign ? (value >= 0 ? '+' : '') : ''
+  const sign = showSign ? (value > 0 ? '+' : '') : ''
 
   return `${sign}${value.toFixed(decimals)}%`
 }
